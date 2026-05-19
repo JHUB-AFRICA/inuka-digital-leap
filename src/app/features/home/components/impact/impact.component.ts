@@ -1,12 +1,13 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { SectionHeaderComponent } from '../../../../shared/components/section-header/section-header.component';
+import { CarouselComponent } from '../../../../shared/components/carousel/carousel.component';
 import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
 import { IMPACT_DATA } from '../../../../core/constants';
 
 @Component({
   selector: 'app-impact',
   standalone: true,
-  imports: [SectionHeaderComponent, ScrollRevealDirective],
+  imports: [SectionHeaderComponent, CarouselComponent, ScrollRevealDirective],
   template: `
     <section class="impact section-padding" id="impact">
       <div class="container">
@@ -36,6 +37,28 @@ import { IMPACT_DATA } from '../../../../core/constants';
             </div>
           }
         </div>
+        <div class="impact__carousel">
+          <app-carousel>
+            @for (item of data.items; track item.label) {
+              <div class="impact__card">
+                <div class="impact__card-header">
+                  <span class="impact__card-label">{{ item.label }}</span>
+                  <span class="impact__card-value">{{ item.value }}{{ item.unit }}</span>
+                </div>
+                <div class="impact__progress">
+                  <div
+                    class="impact__progress-bar"
+                    [class.impact__progress-bar--blue]="item.color === 'blue'"
+                    [class.impact__progress-bar--green]="item.color === 'green'"
+                    [class.impact__progress-bar--gold]="item.color === 'gold'"
+                    [style.width.%]="(item.value / item.target) * 100"
+                  ></div>
+                </div>
+                <span class="impact__card-target">Target: {{ item.target }}{{ item.unit }}</span>
+              </div>
+            }
+          </app-carousel>
+        </div>
       </div>
     </section>
   `,
@@ -50,6 +73,10 @@ import { IMPACT_DATA } from '../../../../core/constants';
       gap: 20px;
       max-width: 900px;
       margin: 0 auto;
+    }
+
+    .impact__carousel {
+      display: none;
     }
 
     .impact__card {
@@ -127,9 +154,11 @@ import { IMPACT_DATA } from '../../../../core/constants';
 
     @media (max-width: 768px) {
       .impact__grid {
-        grid-template-columns: 1fr;
+        display: none;
       }
-
+      .impact__carousel {
+        display: block;
+      }
       .impact__card {
         padding: 20px;
       }

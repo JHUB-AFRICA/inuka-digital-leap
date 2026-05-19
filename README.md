@@ -208,3 +208,282 @@ idl-app/
 ├── tsconfig.json
 ├── tsconfig.spec.json
 └── tailwind.config.ts
+
+# Core Features
+
+## Homepage
+
+* Cinematic hero section
+* Statistics overview
+* Program highlights
+* Digital infrastructure storytelling
+* CTA sections
+
+---
+
+## About
+
+* Program overview
+* Vision and mission
+* Institutional narrative
+* Partnership details
+
+---
+
+## Program Pathway
+
+* Training stages
+* Technical learning journey
+* Timeline visualization
+
+---
+
+## Cohort Showcase
+
+* Trainee profiles
+* Technical specialization
+* Human-centred storytelling
+
+---
+
+## Activities & Events
+
+* Program activities
+* Workshops
+* Field training
+* Community engagement
+
+---
+
+## Stories & Blog
+
+* News articles
+* Student success stories
+* Program updates
+
+---
+
+## Impact Dashboard
+
+* Data visualization
+* Program metrics
+* Transformation indicators
+
+---
+
+## Partners
+
+* Institutional partnerships
+* Sponsor acknowledgements
+* Collaboration ecosystem
+
+---
+
+## Contact & Application
+
+* Program application
+* Inquiry forms
+* Partnership outreach
+
+---
+
+# Design System
+
+The platform uses a centralized design system to ensure:
+
+* Visual consistency
+* Reusability
+* Accessibility
+* Maintainability
+* Scalability
+
+---
+
+## Primary Colours
+
+| Colour        | Hex     |
+| ------------- | ------- |
+| Deep Navy     | #071B34 |
+| Electric Blue | #00AEEF |
+| Emerald Green | #16C47F |
+| Gold Accent   | #D4A017 |
+
+---
+
+## Typography
+
+Primary Fonts:
+
+* Inter
+* Plus Jakarta Sans
+
+Typography principles:
+
+* Strong hierarchy
+* Large hero headings
+* Accessible readability
+* Responsive scaling
+
+---
+
+# UI/UX Principles
+
+The platform emphasizes:
+
+* Modern institutional design
+* Human-centred storytelling
+* Spacious layouts
+* Premium visual hierarchy
+* Accessibility
+* Responsive behavior
+* High-performance rendering
+
+---
+
+# Responsive Design
+
+The application is optimized for:
+
+* Mobile devices
+* Tablets
+* Laptops
+* Desktop screens
+* Large displays
+
+---
+
+# Accessibility
+
+Accessibility standards include:
+
+* Semantic HTML
+* Keyboard navigation
+* WCAG compliance
+* Proper contrast ratios
+* ARIA support
+* Screen-reader compatibility
+
+---
+
+# Performance Goals
+
+Target metrics:
+
+* Lighthouse score > 90
+* Optimized bundle sizes
+* Lazy loading
+* Route-level code splitting
+* Image optimization
+* Efficient rendering
+
+---
+
+# Dockerized Deployment
+
+The application uses:
+
+* Multi-stage Docker builds
+* Nginx production serving
+* Docker Compose orchestration
+
+---
+
+# Docker Commands
+
+## Build Containers
+
+```bash
+docker compose build
+```
+
+---
+
+## Start Containers
+
+```bash
+docker compose up
+```
+
+---
+
+## Run in Background
+
+```bash
+docker compose up -d
+```
+
+---
+
+## Stop Containers
+
+```bash
+docker compose down
+```
+
+---
+
+# Local Development
+
+## Install Dependencies
+
+Using npm:
+
+```bash
+npm install
+```
+
+---
+
+## Start Development Server
+
+```bash
+ng serve
+```
+
+Application runs at:
+
+```txt
+http://localhost:4200
+```
+
+---
+
+# Production Build
+
+```bash
+ng build --configuration production
+```
+
+---
+
+# Coding Standards
+
+The project follows:
+
+* SOLID principles
+* Strict TypeScript typing
+* Clean architecture
+* Reusable component patterns
+* Scalable frontend engineering standards
+
+---
+
+# Maintainers
+
+Developed for:
+
+## Inuka Digital Leap - JHUB AFRICA
+
+Supported by:
+
+* KPC Foundation
+* JKUAT
+* JHUB Africa
+
+---
+
+# License
+
+This project is intended for institutional and educational purposes.
+
+---

@@ -8,6 +8,8 @@ import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reve
   template: `
     <section class="cta section-padding" id="cta">
       <div class="cta__bg" aria-hidden="true">
+        <div class="cta__bg-image" [style.background-image]="'url(assets/discussion.jpg)'"></div>
+        <div class="cta__bg-overlay"></div>
         <div class="cta__fibre">
           <svg class="cta__fibre-svg" viewBox="0 0 1440 400" preserveAspectRatio="none">
             <path
@@ -62,6 +64,31 @@ import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reve
         z-index: 0;
       }
 
+      .cta__bg-image {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        animation: ctaZoom 12s ease-in-out infinite alternate;
+      }
+
+      .cta__bg-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(7, 27, 52, 0.7) 0%,
+          rgba(7, 27, 52, 0.85) 50%,
+          rgba(7, 27, 52, 0.95) 100%
+        );
+        z-index: 1;
+      }
+
+      @keyframes ctaZoom {
+        from { transform: scale(1); }
+        to   { transform: scale(1.08); }
+      }
+
       .cta__fibre {
         position: absolute;
         inset: 0;
@@ -97,7 +124,7 @@ import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reve
 
       .cta__content {
         position: relative;
-        z-index: 1;
+        z-index: 2;
         max-width: 640px;
         margin: 0 auto;
       }

@@ -1,11 +1,12 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { StatCardComponent } from '../../../../shared/components/stat-card/stat-card.component';
+import { CarouselComponent } from '../../../../shared/components/carousel/carousel.component';
 import { STATISTICS } from '../../../../core/constants';
 
 @Component({
   selector: 'app-statistics',
   standalone: true,
-  imports: [StatCardComponent],
+  imports: [StatCardComponent, CarouselComponent],
   template: `
     <section class="statistics-section">
       <div class="container">
@@ -19,6 +20,19 @@ import { STATISTICS } from '../../../../core/constants';
               [delay]="i * 100"
             />
           }
+        </div>
+        <div class="statistics-carousel">
+          <app-carousel>
+            @for (stat of stats; track stat.label; let i = $index) {
+              <app-stat-card
+                [value]="stat.value"
+                [suffix]="stat.suffix"
+                [label]="stat.label"
+                [icon]="stat.icon"
+                [delay]="i * 100"
+              />
+            }
+          </app-carousel>
         </div>
       </div>
     </section>
@@ -35,6 +49,10 @@ import { STATISTICS } from '../../../../core/constants';
       gap: 16px;
     }
 
+    .statistics-carousel {
+      display: none;
+    }
+
     @media (max-width: 1024px) {
       .statistics-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -46,8 +64,10 @@ import { STATISTICS } from '../../../../core/constants';
         padding: 32px 0;
       }
       .statistics-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        display: none;
+      }
+      .statistics-carousel {
+        display: block;
       }
     }
   `],

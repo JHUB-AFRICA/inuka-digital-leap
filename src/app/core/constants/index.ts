@@ -126,7 +126,7 @@ export const PATHWAY_STEPS = [
     step: 3,
     title: 'Technical Training',
     description:
-      'Intensive 3-month bootcamp covering network infrastructure, cloud, cybersecurity, and software development.',
+      'Classroom and lab-based sessions covering fibre fundamentals, network architecture, broadband systems, installation workflows, testing and troubleshooting.',
     icon: 'pi pi-wrench',
     status: 'active' as const,
   },
@@ -134,7 +134,7 @@ export const PATHWAY_STEPS = [
     step: 4,
     title: 'Industry Attachment',
     description:
-      'Paid 3-month attachment with leading technology companies and infrastructure organisations.',
+      'Structured placement with industry partners where trainees apply their learning in supervised real-world environments.',
     icon: 'pi pi-briefcase',
     status: 'upcoming' as const,
   },
@@ -151,12 +151,12 @@ export const PATHWAY_STEPS = [
 export const TRAINEES = [
   {
     name: 'Grace Akinyi',
-    county: 'Kisumu',
+    county: 'Nairobi',
     focus: 'Network Engineering',
     cohort: 'Cohort 1',
     image: '',
     quote:
-      "Inuka gave me the skills and confidence to build Kenya's digital future. This is more than a programme — it's a movement.",
+      "Inuka gave me the skills and confidence to build Kenya's digital future. This is more than a programme, it's a movement.",
   },
   {
     name: 'James Kiprono',
@@ -165,7 +165,7 @@ export const TRAINEES = [
     cohort: 'Cohort 1',
     image: '',
     quote:
-      "From a small town in Kericho to deploying cloud solutions — Inuka transformed my life and my community's future.",
+      "From a small town in Kericho to deploying cloud solutions, Inuka transformed my life and my community's future.",
   },
   {
     name: 'Fatima Hassan',
@@ -221,38 +221,38 @@ export const ACTIVITIES = [
   {
     title: 'Hands-on Fibre Optic Splicing Lab',
     category: 'Technical Training',
-    date: 'February 2026',
+    date: 'July 2026',
     icon: 'pi pi-wrench',
   },
   {
-    title: 'Industry Visit — KPC Control Centre',
-    category: 'Field Visit',
-    date: 'January 2026',
-    icon: 'pi pi-eye',
-  },
-  {
-    title: 'Mentorship Session with Safaricom Engineers',
-    category: 'Mentorship',
-    date: 'March 2026',
+    title: 'OTDR and Power Meter Practical Sessions',
+    category: 'Technical Training',
+    date: 'June 2026',
     icon: 'pi pi-users',
   },
   {
-    title: 'Cybersecurity Capture the Flag Competition',
-    category: 'Event',
-    date: 'December 2025',
+    title: 'Field Demonstrations',
+    category: 'Outreach',
+    date: 'August 2026',
     icon: 'pi pi-shield',
   },
   {
-    title: 'Cloud Architecture Workshop with AWS',
+    title: 'Portfolio Development',
     category: 'Workshop',
-    date: 'February 2026',
-    icon: 'pi pi-cloud',
+    date: 'July 2026',
+    icon: 'pi pi-briefcase',
   },
   {
-    title: 'Community Digital Literacy Outreach',
+    title: 'Masterclasses',
     category: 'Outreach',
-    date: 'March 2026',
-    icon: 'pi pi-heart',
+    date: 'July 2026',
+    icon: 'pi pi-crown',
+  },
+  {
+    title: 'Certification Preparation',
+    category: 'Technical Training',
+    date: 'November 2026',
+    icon: 'pi pi-verified',
   },
 ] as const;
 

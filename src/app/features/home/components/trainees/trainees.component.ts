@@ -1,12 +1,13 @@
-import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { SectionHeaderComponent } from '../../../../shared/components/section-header/section-header.component';
+import { CarouselComponent } from '../../../../shared/components/carousel/carousel.component';
 import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
 import { TRAINEES } from '../../../../core/constants';
 
 @Component({
   selector: 'app-trainees',
   standalone: true,
-  imports: [SectionHeaderComponent, ScrollRevealDirective],
+  imports: [SectionHeaderComponent, CarouselComponent, ScrollRevealDirective],
   template: `
     <section class="trainees section-padding" id="trainees">
       <div class="container">
@@ -39,6 +40,31 @@ import { TRAINEES } from '../../../../core/constants';
             </div>
           }
         </div>
+        <div class="trainees__carousel">
+          <app-carousel>
+            @for (trainee of trainees; track trainee.name) {
+              <div class="trainees__card">
+                <div class="trainees__portrait">
+                  <span class="trainees__avatar">{{ trainee.name.charAt(0) }}{{ trainee.name.split(' ')[1]?.charAt(0) }}</span>
+                </div>
+                <div class="trainees__info">
+                  <h3 class="trainees__name">{{ trainee.name }}</h3>
+                  <div class="trainees__tags">
+                    <span class="trainees__tag trainees__tag--county">{{ trainee.county }}</span>
+                    <span class="trainees__tag trainees__tag--focus">{{ trainee.focus }}</span>
+                  </div>
+                  <blockquote class="trainees__quote">
+                    <p>"{{ trainee.quote }}"</p>
+                  </blockquote>
+                  <a href="#" class="trainees__cta">
+                    View Profile
+                    <span class="pi pi-arrow-right" aria-hidden="true"></span>
+                  </a>
+                </div>
+              </div>
+            }
+          </app-carousel>
+        </div>
       </div>
     </section>
   `,
@@ -51,6 +77,10 @@ import { TRAINEES } from '../../../../core/constants';
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
+    }
+
+    .trainees__carousel {
+      display: none;
     }
 
     .trainees__card {
@@ -165,9 +195,11 @@ import { TRAINEES } from '../../../../core/constants';
 
     @media (max-width: 768px) {
       .trainees__grid {
-        grid-template-columns: 1fr;
+        display: none;
       }
-
+      .trainees__carousel {
+        display: block;
+      }
       .trainees__card {
         padding: 20px;
       }

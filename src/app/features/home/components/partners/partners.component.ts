@@ -1,11 +1,12 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { CarouselComponent } from '../../../../shared/components/carousel/carousel.component';
 import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
 import { PARTNERS } from '../../../../core/constants';
 
 @Component({
   selector: 'app-partners',
   standalone: true,
-  imports: [ScrollRevealDirective],
+  imports: [CarouselComponent, ScrollRevealDirective],
   template: `
     <section class="partners section-padding" id="partners">
       <div class="container">
@@ -26,6 +27,21 @@ import { PARTNERS } from '../../../../core/constants';
               <span class="partners__name">{{ partner.fullName }}</span>
             </div>
           }
+        </div>
+        <div class="partners__carousel">
+          <app-carousel>
+            @for (partner of partners; track partner.name) {
+              <div class="partners__card">
+                <img
+                  [src]="partner.logo"
+                  [alt]="partner.alt"
+                  class="partners__logo"
+                  loading="lazy"
+                />
+                <span class="partners__name">{{ partner.fullName }}</span>
+              </div>
+            }
+          </app-carousel>
         </div>
       </div>
     </section>
@@ -65,6 +81,10 @@ import { PARTNERS } from '../../../../core/constants';
       align-items: center;
       gap: 32px;
       flex-wrap: wrap;
+    }
+
+    .partners__carousel {
+      display: none;
     }
 
     .partners__card {
@@ -114,15 +134,13 @@ import { PARTNERS } from '../../../../core/constants';
 
     @media (max-width: 768px) {
       .partners__grid {
-        flex-direction: column;
-        gap: 16px;
+        display: none;
       }
-
+      .partners__carousel {
+        display: block;
+      }
       .partners__card {
         padding: 24px 32px;
-        min-width: auto;
-        width: 100%;
-        max-width: 320px;
       }
 
       .partners__title {
