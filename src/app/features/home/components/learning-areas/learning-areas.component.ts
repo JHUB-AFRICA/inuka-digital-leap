@@ -1,0 +1,123 @@
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { SectionHeaderComponent } from '../../../../shared/components/section-header/section-header.component';
+import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
+import { LEARNING_AREAS } from '../../../../core/constants';
+
+@Component({
+  selector: 'app-learning-areas',
+  standalone: true,
+  imports: [SectionHeaderComponent, ScrollRevealDirective],
+  template: `
+    <section class="learning section-padding">
+      <div class="container">
+        <app-section-header
+          title="Learning Areas"
+          subtitle="Our comprehensive curriculum covers the full fibre optic lifecycle — from network fundamentals and survey planning through installation, splicing, testing, maintenance, and professional practice."
+          label="Curriculum"
+        />
+
+        <div class="learning__grid">
+          @for (area of areas; track area.title; let i = $index) {
+            <div class="learning__card" appScrollReveal="fade-up" [delay]="i * 80">
+              <div class="learning__card-icon-wrapper">
+                <span class="learning__card-icon" [class]="area.icon" aria-hidden="true"></span>
+              </div>
+              <h3 class="learning__card-title">{{ area.title }}</h3>
+              <p class="learning__card-desc">{{ area.description }}</p>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+  `,
+  styles: [`
+    .learning {
+      background: var(--color-surface);
+    }
+
+    .learning__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .learning__card {
+      padding: 28px 24px;
+      background: var(--color-surface-container-lowest);
+      border: 1px solid var(--color-outline-variant);
+      border-radius: var(--rounded-xl);
+      transition: all var(--transition-base);
+    }
+
+    .learning__card:hover {
+      border-color: var(--color-electric-blue);
+      box-shadow: var(--shadow-glow-blue);
+      transform: translateY(-6px);
+    }
+
+    .learning__card-icon-wrapper {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 174, 239, 0.08);
+      border-radius: var(--rounded-lg);
+      margin-bottom: 20px;
+    }
+
+    .learning__card-icon {
+      font-size: 1.5rem;
+      color: var(--color-electric-blue);
+    }
+
+    .learning__card-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-deep-navy);
+      margin: 0 0 12px;
+    }
+
+    .learning__card-desc {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--color-on-surface-variant);
+      margin: 0;
+    }
+
+    @media (max-width: 1024px) {
+      .learning__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .learning__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .learning__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .learning__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .learning__card {
+        padding: 24px 20px;
+      }
+    }
+  `],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class LearningAreasComponent {
+  protected readonly areas = LEARNING_AREAS;
+}

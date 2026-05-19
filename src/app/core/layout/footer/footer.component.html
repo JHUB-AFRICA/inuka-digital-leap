@@ -1,0 +1,88 @@
+<footer class="footer" role="contentinfo" id="footer">
+  <div class="footer__acknowledgement">
+    <div class="container">
+      <span class="footer__badge">Supported by KPC Foundation</span>
+    </div>
+  </div>
+
+  <div class="footer__main">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col footer__col--brand">
+          <h3 class="footer__title">{{ siteName }}</h3>
+          <p class="footer__tagline">{{ tagline }}</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Twitter/X">
+              <span class="pi pi-twitter" aria-hidden="true"></span>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">
+              <span class="pi pi-linkedin" aria-hidden="true"></span>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">
+              <span class="pi pi-youtube" aria-hidden="true"></span>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <span class="pi pi-instagram" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__heading">Quick Links</h4>
+          <ul class="footer__links">
+            @for (link of navLinks; track link.label) {
+              <li>
+                <a class="footer__link" [href]="'#' + link.fragment">{{ link.label }}</a>
+              </li>
+            }
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__heading">Contact</h4>
+          <ul class="footer__contact">
+            <li class="footer__contact-item">
+              <span class="pi pi-map-marker" aria-hidden="true"></span>
+              <span>JKUAT, Juja, Kenya</span>
+            </li>
+            <li class="footer__contact-item">
+              <span class="pi pi-envelope" aria-hidden="true"></span>
+              <span> info.jhub@jkuat.ac.ke</span>
+            </li>
+            <li class="footer__contact-item">
+              <span class="pi pi-phone" aria-hidden="true"></span>
+              <span>+254 67 52181/4 LAN Ext 2814</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__col footer__col--partners">
+          <h4 class="footer__heading">Our Partners</h4>
+          <div class="footer__logos">
+            @for (partner of partners; track partner.name) {
+              <div class="footer__logo-wrapper">
+                <img
+                  [src]="partner.logo"
+                  [alt]="partner.alt"
+                  class="footer__logo"
+                  loading="lazy"
+                />
+                <span class="footer__logo-name">{{ partner.fullName }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          &copy; {{ currentYear }} {{ siteName }}. All rights reserved.
+        </p>
+        <div class="footer__bottom-links">
+          <a href="#" class="footer__bottom-link">Privacy Policy</a>
+          <a href="#" class="footer__bottom-link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

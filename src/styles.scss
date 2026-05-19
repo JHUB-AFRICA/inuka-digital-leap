@@ -1,0 +1,151 @@
+@use './styles/variables';
+@use './styles/typography';
+@use './styles/mixins';
+@use './styles/theme';
+@import 'tailwindcss';
+@import 'primeicons/primeicons.css';
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font: var(--body-md);
+    color: var(--color-on-surface);
+    background: var(--color-surface);
+    overflow-x: hidden;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-electric-blue);
+    outline-offset: 2px;
+    border-radius: var(--rounded-md);
+  }
+
+  ::selection {
+    background: var(--color-electric-blue);
+    color: var(--color-white);
+  }
+}
+
+@layer components {
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  .container-narrow {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  .section-padding {
+    padding: var(--section-gap) var(--margin-desktop);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  .glass-dark {
+    background: rgba(7, 27, 52, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .fiber-glow-blue {
+    box-shadow: var(--shadow-glow-blue);
+  }
+
+  .fiber-glow-green {
+    box-shadow: var(--shadow-glow-green);
+  }
+
+  .card-premium {
+    background: var(--color-surface-container-lowest);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--rounded-xl);
+    transition: all var(--transition-base);
+  }
+
+  .card-premium:hover {
+    border-color: var(--color-electric-blue);
+    box-shadow: var(--shadow-glow-blue);
+  }
+
+  .text-gradient-blue {
+    background: linear-gradient(135deg, var(--color-electric-blue), #0066cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-green {
+    background: linear-gradient(135deg, var(--color-emerald-green), #0a9e63);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(rgba(0, 174, 239, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 174, 239, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      rgba(7, 27, 52, 0.95) 0%,
+      rgba(7, 27, 52, 0.6) 50%,
+      rgba(7, 27, 52, 0.3) 100%
+    );
+  }
+
+  @media (max-width: 768px) {
+    .section-padding {
+      padding: var(--section-gap-sm) var(--margin-mobile);
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .container {
+      max-width: 1440px;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

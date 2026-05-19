@@ -1,0 +1,79 @@
+<section class="hero" id="hero">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__grid"></div>
+    <div class="hero__fibre-lines">
+      <svg class="hero__fibre-svg" viewBox="0 0 1440 900" preserveAspectRatio="none">
+        <path class="hero__fibre-path" d="M0,450 Q360,200 720,450 T1440,450" fill="none" stroke="rgba(0,174,239,0.1)" stroke-width="1.2"/>
+        <path class="hero__fibre-path hero__fibre-path--2" d="M-100,300 Q300,600 700,300 T1500,350" fill="none" stroke="rgba(0,174,239,0.07)" stroke-width="0.8"/>
+        <path class="hero__fibre-path hero__fibre-path--3" d="M-200,550 Q250,200 700,550 T1600,500" fill="none" stroke="rgba(0,174,239,0.05)" stroke-width="0.6"/>
+      </svg>
+    </div>
+    <div class="hero__glow hero__glow--1"></div>
+    <div class="hero__glow hero__glow--2"></div>
+  </div>
+
+  <div class="hero__gradient"></div>
+
+  <div class="hero__content">
+    <div class="container">
+      <div class="hero__layout">
+        <div class="hero__text-col">
+          <div class="hero__badge-wrapper">
+            <span class="hero__badge">Supported by KPC Foundation</span>
+          </div>
+
+          <h1 class="hero__title">
+            <span class="hero__title-line">Inuka</span>
+            <span class="hero__title-line hero__title-line--accent">Digital Leap</span>
+          </h1>
+
+          <p class="hero__subtitle">{{ tagline }}</p>
+
+          <div class="hero__actions">
+            <a href="#about" class="hero__btn hero__btn--primary">
+              Learn More
+              <span class="hero__btn-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#cta" class="hero__btn hero__btn--secondary">
+              Apply Now
+            </a>
+          </div>
+
+        </div>
+
+        <div class="hero__visual-col" aria-label="Training lab sessions slideshow">
+          <div class="hero__slider">
+            @for (slide of slides; track slide.topic; let i = $index) {
+              <div
+                class="hero__slide"
+                [class.hero__slide--active]="currentSlide() === i"
+                [style.background-image]="slide.image"
+                role="group"
+                [attr.aria-roledescription]="i === currentSlide() ? 'slide' : undefined"
+                [attr.aria-label]="i === currentSlide() ? slide.topic : undefined"
+              >
+                <div class="hero__slide-overlay"></div>
+                <div class="hero__slide-content">
+                  <span class="hero__slide-topic">{{ slide.topic }}</span>
+                  <p class="hero__slide-desc">{{ slide.description }}</p>
+                </div>
+              </div>
+            }
+
+            <div class="hero__slider-dots">
+              @for (slide of slides; track slide.topic; let i = $index) {
+                <button
+                  class="hero__slider-dot"
+                  [class.hero__slider-dot--active]="currentSlide() === i"
+                  (click)="goToSlide(i)"
+                  [attr.aria-label]="'Go to slide ' + (i + 1) + ': ' + slide.topic"
+                  type="button"
+                ></button>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

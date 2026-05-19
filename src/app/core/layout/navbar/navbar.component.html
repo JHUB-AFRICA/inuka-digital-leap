@@ -1,0 +1,92 @@
+<header
+  class="navbar"
+  [class.navbar--scrolled]="isScrolled()"
+  [class.navbar--mobile-open]="isMobileOpen()"
+  role="banner"
+>
+  <div class="navbar__inner container">
+    <div class="navbar__brand">
+      <a routerLink="/" class="navbar__logo-link" aria-label="Inuka Digital Leap Home">
+        <div class="navbar__logos">
+          @for (partner of partners; track partner.name) {
+            <div class="navbar__logo-wrapper" [class.navbar__logo-wrapper--scrolled]="isScrolled()">
+              <img
+                [src]="partner.logo"
+                [alt]="partner.alt"
+                class="navbar__logo"
+              />
+            </div>
+          }
+        </div>
+      </a>
+    </div>
+
+    <nav class="navbar__nav" role="navigation" aria-label="Main navigation">
+      <ul class="navbar__links">
+        @for (link of navLinks; track link.label) {
+          <li>
+            <a
+              class="navbar__link"
+              [class.navbar__link--active]="activeSection() === link.fragment"
+              [href]="'#' + link.fragment"
+              (click)="closeMobileMenu()"
+            >
+              @if (activeSection() === link.fragment) {
+                <span class="navbar__link-indicator" aria-hidden="true"></span>
+              }
+              {{ link.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="navbar__actions">
+      <a href="#cta" class="navbar__cta">Apply Now</a>
+    </div>
+
+    <button
+      class="navbar__hamburger"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="isMobileOpen()"
+      aria-label="Toggle navigation menu"
+      type="button"
+    >
+      <span class="navbar__hamburger-bar" aria-hidden="true"></span>
+      <span class="navbar__hamburger-bar" aria-hidden="true"></span>
+      <span class="navbar__hamburger-bar" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  @if (isMobileOpen()) {
+    <div class="navbar__mobile-overlay" (click)="closeMobileMenu()">
+      <nav class="navbar__mobile-menu" role="navigation" aria-label="Mobile navigation" (click)="$event.stopPropagation()">
+        <ul class="navbar__mobile-links">
+          @for (link of navLinks; track link.label) {
+            <li>
+              <a
+                class="navbar__mobile-link"
+                [class.navbar__mobile-link--active]="activeSection() === link.fragment"
+                [href]="'#' + link.fragment"
+                (click)="closeMobileMenu()"
+              >
+                {{ link.label }}
+              </a>
+            </li>
+          }
+        </ul>
+        <a href="#cta" class="navbar__cta navbar__cta--mobile" (click)="closeMobileMenu()">Apply Now</a>
+      </nav>
+    </div>
+  }
+</header>
+
+<button
+  class="back-to-top"
+  [class.back-to-top--visible]="showBackToTop()"
+  (click)="scrollToTop()"
+  aria-label="Back to top"
+  type="button"
+>
+  <span class="pi pi-arrow-up" aria-hidden="true"></span>
+</button>

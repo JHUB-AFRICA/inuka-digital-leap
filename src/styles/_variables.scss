@@ -1,0 +1,77 @@
+:root {
+  --color-deep-navy: #071B34;
+  --color-deep-navy-rgb: 7, 27, 52;
+  --color-electric-blue: #00AEEF;
+  --color-electric-blue-rgb: 0, 174, 239;
+  --color-emerald-green: #16C47F;
+  --color-emerald-green-rgb: 22, 196, 127;
+  --color-gold: #D4A017;
+  --color-gold-rgb: 212, 160, 23;
+
+  --color-surface: #fbf9fb;
+  --color-surface-dim: #dbd9dc;
+  --color-surface-bright: #fbf9fb;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f5f3f5;
+  --color-surface-container: #efedf0;
+  --color-surface-container-high: #e9e7ea;
+  --color-surface-container-highest: #e4e2e4;
+  --color-on-surface: #1b1b1d;
+  --color-on-surface-variant: #44474d;
+  --color-outline: #74777e;
+  --color-outline-variant: #c4c6ce;
+
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Space Grotesk', sans-serif;
+
+  --display-xl: 800 64px/72px var(--font-heading);
+  --headline-lg: 700 40px/48px var(--font-heading);
+  --headline-md: 700 32px/40px var(--font-heading);
+  --headline-sm: 700 24px/32px var(--font-heading);
+  --body-lg: 400 18px/30px var(--font-body);
+  --body-md: 400 16px/26px var(--font-body);
+  --body-sm: 400 14px/22px var(--font-body);
+  --label-caps: 600 12px/16px var(--font-mono);
+  --label-sm: 500 11px/16px var(--font-mono);
+
+  --rounded-sm: 0.125rem;
+  --rounded-md: 0.25rem;
+  --rounded-lg: 0.5rem;
+  --rounded-xl: 0.75rem;
+  --rounded-full: 9999px;
+
+  --shadow-glass: 0 4px 30px rgba(0, 0, 0, 0.06);
+  --shadow-glass-lg: 0 8px 60px rgba(0, 0, 0, 0.08);
+  --shadow-glow-blue: 0 0 15px rgba(0, 174, 239, 0.3);
+  --shadow-glow-green: 0 0 15px rgba(22, 196, 127, 0.3);
+  --shadow-elevation-1: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-elevation-2: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-elevation-3: 0 8px 24px rgba(0, 0, 0, 0.1);
+
+  --section-gap: 120px;
+  --section-gap-md: 80px;
+  --section-gap-sm: 60px;
+  --container-max: 1280px;
+  --container-narrow: 1024px;
+  --gutter: 24px;
+  --margin-desktop: 64px;
+  --margin-mobile: 20px;
+
+  --navbar-height: 80px;
+  --navbar-height-mobile: 64px;
+
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  --transition-extra-slow: 800ms ease;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-gap: 60px;
+    --section-gap-md: 48px;
+    --section-gap-sm: 32px;
+    --gutter: 16px;
+  }
+}

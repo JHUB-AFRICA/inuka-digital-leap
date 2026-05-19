@@ -1,0 +1,69 @@
+import { Component, signal, HostListener, AfterViewInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { NAV_LINKS, PARTNERS, SITE_CONFIG } from '../../constants';
+
+@Component({
+  selector: 'app-navbar',
+  standalone: true,
+  imports: [RouterLink],
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class NavbarComponent implements AfterViewInit, OnDestroy {
+  protected readonly siteName = SITE_CONFIG.name;
+  protected readonly navLinks = NAV_LINKS;
+  protected readonly partners = PARTNERS;
+  protected readonly isScrolled = signal(false);
+  protected readonly isMobileOpen = signal(false);
+  protected readonly activeSection = signal('hero');
+  protected readonly showBackToTop = signal(false);
+
+  private observers: IntersectionObserver[] = [];
+
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    this.isScrolled.set(window.scrollY > 20);
+    this.showBackToTop.set(window.scrollY > 600);
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => this.initSectionObserver(), 500);
+  }
+
+  ngOnDestroy(): void {
+    this.observers.forEach((o) => o.disconnect());
+  }
+
+  private initSectionObserver(): void {
+    const sectionIds = this.navLinks.map((l) => l.fragment);
+
+    for (const id of sectionIds) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            this.activeSection.set(id);
+          }
+        },
+        { rootMargin: '-30% 0px -60% 0px', threshold: 0 }
+      );
+      observer.observe(el);
+      this.observers.push(observer);
+    }
+  }
+
+  protected toggleMobileMenu(): void {
+    this.isMobileOpen.update((v) => !v);
+  }
+
+  protected closeMobileMenu(): void {
+    this.isMobileOpen.set(false);
+  }
+
+  protected scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
