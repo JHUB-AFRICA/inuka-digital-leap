@@ -1,10 +1,11 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-final-cta',
   standalone: true,
-  imports: [ScrollRevealDirective],
+  imports: [RouterLink, ScrollRevealDirective],
   template: `
     <section class="cta section-padding" id="cta">
       <div class="cta__bg" aria-hidden="true">
@@ -39,7 +40,7 @@ import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reve
             Applications for Cohort 1 are now closed.
           </p>
           <div class="cta__actions">
-            <a href="#" class="cta__btn cta__btn--primary">
+            <a routerLink="/apply" class="cta__btn cta__btn--primary">
               Apply Now
               <span class="pi pi-arrow-right" aria-hidden="true"></span>
             </a>

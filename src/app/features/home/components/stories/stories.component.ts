@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { SectionHeaderComponent } from '../../../../shared/components/section-header/section-header.component';
 import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
 import { STORIES } from '../../../../core/constants';
@@ -6,7 +7,7 @@ import { STORIES } from '../../../../core/constants';
 @Component({
   selector: 'app-stories',
   standalone: true,
-  imports: [SectionHeaderComponent, ScrollRevealDirective],
+  imports: [RouterLink, SectionHeaderComponent, ScrollRevealDirective],
   template: `
     <section class="stories section-padding" id="stories">
       <div class="container">
@@ -17,7 +18,7 @@ import { STORIES } from '../../../../core/constants';
         />
 
         <div class="stories__grid">
-          @for (story of stories; track story.title; let i = $index) {
+          @for (story of featured; track story.title; let i = $index) {
             <article
               class="stories__card"
               [class.stories__card--featured]="story.featured"
@@ -38,13 +39,20 @@ import { STORIES } from '../../../../core/constants';
                 @if (story.featured) {
                   <p class="stories__card-excerpt">{{ story.excerpt }}</p>
                 }
-                <a href="#" class="stories__card-link">
+                <a [routerLink]="['/stories', story.slug]" class="stories__card-link">
                   Read more
                   <span class="pi pi-arrow-right" aria-hidden="true"></span>
                 </a>
               </div>
             </article>
           }
+        </div>
+
+        <div class="stories__cta" appScrollReveal="fade-up">
+          <a routerLink="/stories" class="stories__cta-link">
+            View all stories
+            <span class="pi pi-arrow-right" aria-hidden="true"></span>
+          </a>
         </div>
       </div>
     </section>
@@ -56,7 +64,7 @@ import { STORIES } from '../../../../core/constants';
 
     .stories__grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr;
       gap: 20px;
     }
 
@@ -159,13 +167,34 @@ import { STORIES } from '../../../../core/constants';
       }
     }
 
+    .stories__cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .stories__cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-electric-blue);
+      padding: 12px 28px;
+      border: 1px solid var(--color-electric-blue);
+      border-radius: var(--rounded-full);
+      transition: all var(--transition-base);
+
+      &:hover {
+        background: var(--color-electric-blue);
+        color: #fff;
+        gap: 12px;
+      }
+    }
+
     @media (max-width: 1024px) {
       .stories__grid {
         grid-template-columns: 1fr 1fr;
-      }
-
-      .stories__card:first-child {
-        grid-column: 1 / -1;
       }
     }
 
@@ -186,5 +215,5 @@ import { STORIES } from '../../../../core/constants';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StoriesComponent {
-  protected readonly stories = STORIES;
+  protected readonly featured = STORIES.filter((s) => s.featured).slice(0, 2);
 }

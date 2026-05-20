@@ -1,5 +1,6 @@
-import { Component, signal, HostListener, AfterViewInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, signal, HostListener, AfterViewInit, OnDestroy, ChangeDetectionStrategy, inject } from '@angular/core';
+import { RouterLink, Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { NAV_LINKS, PARTNERS, SITE_CONFIG } from '../../constants';
 
 @Component({
@@ -11,6 +12,8 @@ import { NAV_LINKS, PARTNERS, SITE_CONFIG } from '../../constants';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent implements AfterViewInit, OnDestroy {
+  private readonly router = inject(Router);
+
   protected readonly siteName = SITE_CONFIG.name;
   protected readonly navLinks = NAV_LINKS;
   protected readonly partners = PARTNERS;
@@ -29,6 +32,10 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     setTimeout(() => this.initSectionObserver(), 500);
+    this.checkHomePage();
+    this.router.events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe(() => {
+      this.checkHomePage();
+    });
   }
 
   ngOnDestroy(): void {
@@ -53,6 +60,25 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
       observer.observe(el);
       this.observers.push(observer);
     }
+  }
+
+  protected isActiveRoute(path: string): boolean {
+    if (path === '/') {
+      return this.router.isActive(path, { paths: 'exact', queryParams: 'ignored', fragment: 'ignored', matrixParams: 'ignored' });
+    }
+    return this.router.isActive(path, { paths: 'subset', queryParams: 'ignored', fragment: 'ignored', matrixParams: 'ignored' });
+  }
+
+  protected readonly isHomePage = signal(true);
+
+  private checkHomePage(): void {
+    this.isHomePage.set(this.router.url === '/' || this.router.url === '');
+  }
+
+  protected navigateTo(event: Event, path: string): void {
+    event.preventDefault();
+    this.closeMobileMenu();
+    this.router.navigateByUrl(path);
   }
 
   protected toggleMobileMenu(): void {

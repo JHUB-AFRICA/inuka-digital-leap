@@ -1,18 +1,22 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { CarouselComponent } from '../../../../shared/components/carousel/carousel.component';
+import { RouterLink } from '@angular/router';
 import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
 import { PARTNERS } from '../../../../core/constants';
 
 @Component({
   selector: 'app-partners',
   standalone: true,
-  imports: [CarouselComponent, ScrollRevealDirective],
+  imports: [RouterLink, ScrollRevealDirective],
   template: `
     <section class="partners section-padding" id="partners">
       <div class="container">
         <div class="partners__header" appScrollReveal="fade-up" [delay]="0">
           <span class="partners__label">Our Partners</span>
           <h2 class="partners__title">Backed by Kenya's Leading Institutions</h2>
+          <p class="partners__subtitle">
+            The Inuka Digital Leap programme is powered by the collective expertise and
+            commitment of our partner organisations.
+          </p>
         </div>
 
         <div class="partners__grid" appScrollReveal="fade-up" [delay]="100">
@@ -28,20 +32,12 @@ import { PARTNERS } from '../../../../core/constants';
             </div>
           }
         </div>
-        <div class="partners__carousel">
-          <app-carousel>
-            @for (partner of partners; track partner.name) {
-              <div class="partners__card">
-                <img
-                  [src]="partner.logo"
-                  [alt]="partner.alt"
-                  class="partners__logo"
-                  loading="lazy"
-                />
-                <span class="partners__name">{{ partner.fullName }}</span>
-              </div>
-            }
-          </app-carousel>
+
+        <div class="partners__cta" appScrollReveal="fade-up">
+          <a routerLink="/partners" class="partners__cta-link">
+            Learn more about our partners
+            <span class="pi pi-arrow-right" aria-hidden="true"></span>
+          </a>
         </div>
       </div>
     </section>
@@ -72,7 +68,16 @@ import { PARTNERS } from '../../../../core/constants';
       font-size: 1.75rem;
       font-weight: 700;
       color: var(--color-deep-navy);
-      margin: 0;
+      margin: 0 0 12px;
+    }
+
+    .partners__subtitle {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--color-on-surface-variant);
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     .partners__grid {
@@ -81,10 +86,6 @@ import { PARTNERS } from '../../../../core/constants';
       align-items: center;
       gap: 32px;
       flex-wrap: wrap;
-    }
-
-    .partners__carousel {
-      display: none;
     }
 
     .partners__card {
@@ -98,6 +99,8 @@ import { PARTNERS } from '../../../../core/constants';
       border-radius: var(--rounded-xl);
       transition: all var(--transition-base);
       min-width: 240px;
+      flex: 1;
+      max-width: 320px;
     }
 
     .partners__card:hover {
@@ -121,6 +124,32 @@ import { PARTNERS } from '../../../../core/constants';
       line-height: 1.4;
     }
 
+    .partners__cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .partners__cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-electric-blue);
+      padding: 12px 28px;
+      border: 1px solid var(--color-electric-blue);
+      border-radius: var(--rounded-full);
+      transition: all var(--transition-base);
+      text-decoration: none;
+
+      &:hover {
+        background: var(--color-electric-blue);
+        color: #fff;
+        gap: 12px;
+      }
+    }
+
     @media (max-width: 1024px) {
       .partners__grid {
         gap: 20px;
@@ -133,14 +162,9 @@ import { PARTNERS } from '../../../../core/constants';
     }
 
     @media (max-width: 768px) {
-      .partners__grid {
-        display: none;
-      }
-      .partners__carousel {
-        display: block;
-      }
       .partners__card {
         padding: 24px 32px;
+        max-width: 100%;
       }
 
       .partners__title {

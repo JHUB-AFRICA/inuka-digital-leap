@@ -25,24 +25,38 @@
       <ul class="navbar__links">
         @for (link of navLinks; track link.label) {
           <li>
-            <a
-              class="navbar__link"
-              [class.navbar__link--active]="activeSection() === link.fragment"
-              [href]="'#' + link.fragment"
-              (click)="closeMobileMenu()"
-            >
-              @if (activeSection() === link.fragment) {
-                <span class="navbar__link-indicator" aria-hidden="true"></span>
-              }
-              {{ link.label }}
-            </a>
+            @if ($any(link).path) {
+              <a
+                class="navbar__link"
+                [class.navbar__link--active]="isActiveRoute($any(link).path)"
+                [href]="$any(link).path"
+                (click)="navigateTo($event, $any(link).path)"
+              >
+                @if (isActiveRoute($any(link).path)) {
+                  <span class="navbar__link-indicator" aria-hidden="true"></span>
+                }
+                {{ link.label }}
+              </a>
+            } @else {
+              <a
+                class="navbar__link"
+                [class.navbar__link--active]="isHomePage() && activeSection() === link.fragment"
+                [href]="'#' + link.fragment"
+                (click)="closeMobileMenu()"
+              >
+                @if (isHomePage() && activeSection() === link.fragment) {
+                  <span class="navbar__link-indicator" aria-hidden="true"></span>
+                }
+                {{ link.label }}
+              </a>
+            }
           </li>
         }
       </ul>
     </nav>
 
     <div class="navbar__actions">
-      <a href="#cta" class="navbar__cta">Apply Now</a>
+      <a routerLink="/apply" class="navbar__cta">Apply Now</a>
     </div>
 
     <button
@@ -64,18 +78,29 @@
         <ul class="navbar__mobile-links">
           @for (link of navLinks; track link.label) {
             <li>
-              <a
-                class="navbar__mobile-link"
-                [class.navbar__mobile-link--active]="activeSection() === link.fragment"
-                [href]="'#' + link.fragment"
-                (click)="closeMobileMenu()"
-              >
-                {{ link.label }}
-              </a>
+              @if ($any(link).path) {
+                <a
+                  class="navbar__mobile-link"
+                  [class.navbar__mobile-link--active]="isActiveRoute($any(link).path)"
+                  [href]="$any(link).path"
+                  (click)="navigateTo($event, $any(link).path)"
+                >
+                  {{ link.label }}
+                </a>
+              } @else {
+                <a
+                  class="navbar__mobile-link"
+                  [class.navbar__mobile-link--active]="isHomePage() && activeSection() === link.fragment"
+                  [href]="'#' + link.fragment"
+                  (click)="closeMobileMenu()"
+                >
+                  {{ link.label }}
+                </a>
+              }
             </li>
           }
         </ul>
-        <a href="#cta" class="navbar__cta navbar__cta--mobile" (click)="closeMobileMenu()">Apply Now</a>
+        <a routerLink="/apply" class="navbar__cta navbar__cta--mobile" (click)="closeMobileMenu()">Apply Now</a>
       </nav>
     </div>
   }
