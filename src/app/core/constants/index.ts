@@ -119,7 +119,7 @@ export const PARTNERS: Partner[] = [
   {
     name: 'KPC Foundation',
     slug: 'kpc-foundation',
-    logo: 'assets/logos/kpc-foundation.jpg',
+    logo: 'assets/logos/Logo_of_KPC.jpg',
     alt: 'Kenya Pipeline Company Foundation',
     fullName: 'Kenya Pipeline Company Foundation',
     type: 'Corporate Foundation',
@@ -141,7 +141,7 @@ export const PARTNERS: Partner[] = [
     fullName: 'JHUB Africa',
     type: 'Technology Hub',
     description:
-      'JHUB Africa is a technology and innovation hub driving digital transformation through practical training, industry partnerships, and inclusive programmes that bridge the skills gap in Kenya\'s technology workforce.',
+      "JHUB Africa is a technology and innovation hub driving digital transformation through practical training, industry partnerships, and inclusive programmes that bridge the skills gap in Kenya's technology workforce.",
     focus: [
       'Programme Management',
       'Technical Training',
@@ -316,12 +316,12 @@ export interface Story {
 
 export const STORIES: Story[] = [
   {
-    title: 'Inuka Digital Leap Graduates First Cohort of 15 Trailblazers',
-    slug: 'inuka-digital-leap-graduates-first-cohort-of-15-trailblazers',
+    title: 'Inuka Digital Leap First Cohort of 15 Trailblazers',
+    slug: 'inuka-digital-leap-first-cohort-of-15-trailblazers',
     excerpt:
-      "The inaugural cohort celebrates successful completion of intensive training in network infrastructure and cloud engineering, marking a milestone in Kenya's digital talent pipeline development.",
+      "The inaugural cohort celebrates successful begining of intensive training in network infrastructure and cloud engineering, marking a milestone in Kenya's digital talent pipeline development.",
     content:
-      "The Inuka Digital Leap programme celebrated a monumental achievement on April 15, 2026, as its inaugural cohort of 15 trainees successfully completed the intensive training programme. The graduation ceremony, held at the JKUAT main campus, brought together industry leaders, government officials, and family members to honour the achievements of these trailblazers.\n\nOver the course of six months, the trainees underwent rigorous instruction in network infrastructure, fibre optic engineering, broadband deployment, and cloud engineering. The curriculum, developed in partnership with leading industry stakeholders, combined classroom theory with extensive hands-on practical sessions.\n\n'These 15 graduates represent the beginning of a transformative journey for Kenya's digital workforce,' said Dr. Kamau, Programme Director at JHUB Africa. 'They have not only acquired technical skills but have developed the problem-solving mindset needed to excel in the field.'\n\nThe graduates will now proceed to industry attachments with partner organisations, including Safaricom, Telkom Kenya, and various fibre network operators across the country. This placement phase is designed to bridge the gap between training and real-world application.\n\nThe success of Cohort 1 has already sparked interest from prospective trainees across all 47 counties, with applications for Cohort 2 expected to open in the coming months.",
+      'The Inuka Digital Leap Programme marked a defining milestone with the formation of its inaugural cohort of 15 trainees, who successfully applied, were selected, and formally enrolled into the intensive training pathway on June 15, 2026. The cohort represents the first intake under the programme’s structured digital workforce development framework. \n\n The launch and recognition event, hosted at the Jomo Kenyatta University of Agriculture and Technology (JKUAT) Main Campus, brought together stakeholders from industry, government, and the families of the trainees to acknowledge the significance of this pioneering group. \n\n Over a six-month period, Cohort 1 underwent rigorous, competency-based training covering network infrastructure, fibre optic engineering, broadband deployment, and cloud engineering. \n\n The curriculum developed in collaboration with industry partners through JHUB Africa combined structured classroom instruction with intensive hands-on laboratory and field-based learning',
     date: 'April 15, 2026',
     category: 'Milestone',
     image: '',
@@ -404,7 +404,7 @@ export const STORIES: Story[] = [
     title: "Industry Mentors Share Insights on Kenya's Digital Infrastructure Future",
     slug: 'industry-mentors-share-insights-on-kenyas-digital-infrastructure-future',
     excerpt:
-      "Leading engineers from Safaricom, Telkom Kenya, and fibre operators engaged trainees in a day-long mentorship forum.",
+      'Leading engineers from Safaricom, Telkom Kenya, and fibre operators engaged trainees in a day-long mentorship forum.',
     content:
       "The Inuka Digital Leap programme hosted a mentorship forum featuring senior engineers and technology leaders from Kenya's leading telecommunications companies. The event brought together experts from Safaricom, Telkom Kenya, and several fibre network operators for a day of knowledge sharing and career guidance.\n\nThe forum covered a wide range of topics, from the current state of Kenya's network infrastructure to emerging technologies like 5G, edge computing, and software-defined networking. The mentors shared their personal career journeys, offering valuable insights into the skills and attributes that drive success in the industry.\n\n'The telecommunications industry in Kenya is at an inflection point,' said James Ochieng, a network architect at Safaricom. 'With the rapid expansion of fibre networks and the upcoming 5G rollout, there has never been a better time to enter this field.'\n\nThe mentorship forum has now been established as a regular feature of the programme, with plans to expand it to include international experts and virtual participation from partner organisations.",
     date: 'November 30, 2025',

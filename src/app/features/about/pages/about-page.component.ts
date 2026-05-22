@@ -25,7 +25,7 @@ interface Milestone {
         <div class="about-hero__bg" aria-hidden="true">
           <div
             class="about-hero__image"
-            [style.background-image]="'url(assets/jhub-img.jpg)'"
+            [style.background-image]="'url(assets/about-idl.png)'"
           ></div>
           <div class="about-hero__overlay"></div>
           <div class="about-hero__glow about-hero__glow--1"></div>
@@ -37,7 +37,7 @@ interface Milestone {
             <h1 class="about-hero__title">Building Kenya's Digital Future</h1>
             <p class="about-hero__subtitle">
               A transformative partnership between JKUAT, Kenya Pipeline Company Foundation, and
-              JHUB Africa — equipping Kenyan youth with world-class digital infrastructure skills.
+              JHUB Africa equipping Kenyan youth with world-class digital infrastructure skills.
             </p>
           </div>
         </div>
@@ -49,7 +49,7 @@ interface Milestone {
             <div class="about-story__visual" appScrollReveal="fade-right" [delay]="0">
               <div class="about-story__image-block">
                 <img
-                  src="assets/jhub-img.jpg"
+                  src="assets/about-idl.png"
                   alt="Inuka Digital Leap training lab session"
                   class="about-story__image"
                   loading="lazy"

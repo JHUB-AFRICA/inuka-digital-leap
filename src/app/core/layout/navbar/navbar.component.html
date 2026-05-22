@@ -7,17 +7,11 @@
   <div class="navbar__inner container">
     <div class="navbar__brand">
       <a routerLink="/" class="navbar__logo-link" aria-label="Inuka Digital Leap Home">
-        <div class="navbar__logos">
-          @for (partner of partners; track partner.name) {
-            <div class="navbar__logo-wrapper" [class.navbar__logo-wrapper--scrolled]="isScrolled()">
-              <img
-                [src]="partner.logo"
-                [alt]="partner.alt"
-                class="navbar__logo"
-              />
-            </div>
-          }
-        </div>
+        <img
+          src="assets/logos/idl-logo-nobg.png"
+          alt="Inuka Digital Leap"
+          class="navbar__brand-logo"
+        />
       </a>
     </div>
 

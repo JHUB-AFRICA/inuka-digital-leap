@@ -53,9 +53,11 @@ import { STORIES } from '../../../core/constants';
             appScrollReveal="fade-up"
           >
             <div class="featured__card-image">
-              <div class="featured__card-placeholder">
-                <span class="pi pi-newspaper" aria-hidden="true"></span>
-              </div>
+              <img
+                src="assets/logos/idl-logo.jpeg"
+                alt="Inuka Digital Leap"
+                class="featured__card-img"
+              />
             </div>
             <div class="featured__card-body">
               <div class="featured__card-meta">
@@ -229,12 +231,20 @@ import { STORIES } from '../../../core/constants';
       width: 100%;
       height: 100%;
       min-height: 320px;
-      background: linear-gradient(135deg, var(--color-deep-navy), #0a2a4a);
+      background: var(--color-deep-navy);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: rgba(255, 255, 255, 0.1);
-      font-size: 4rem;
+      padding: 48px;
+    }
+
+    .featured__card-img {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      object-fit: contain;
+      padding: 48px;
+      background: var(--color-deep-navy);
     }
 
     .featured__card-body {

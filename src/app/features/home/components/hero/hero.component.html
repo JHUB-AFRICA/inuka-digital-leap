@@ -1,5 +1,6 @@
 <section class="hero" id="hero">
   <div class="hero__bg" aria-hidden="true">
+    <div class="hero__bg-image" style="background-image: url(assets/hero-image.png);"></div>
     <div class="hero__grid"></div>
     <div class="hero__fibre-lines">
       <svg class="hero__fibre-svg" viewBox="0 0 1440 900" preserveAspectRatio="none">
@@ -37,40 +38,6 @@
             <a href="#cta" class="hero__btn hero__btn--secondary">
               Apply Now
             </a>
-          </div>
-
-        </div>
-
-        <div class="hero__visual-col" aria-label="Training lab sessions slideshow">
-          <div class="hero__slider">
-            @for (slide of slides; track slide.topic; let i = $index) {
-              <div
-                class="hero__slide"
-                [class.hero__slide--active]="currentSlide() === i"
-                [style.background-image]="slide.image"
-                role="group"
-                [attr.aria-roledescription]="i === currentSlide() ? 'slide' : undefined"
-                [attr.aria-label]="i === currentSlide() ? slide.topic : undefined"
-              >
-                <div class="hero__slide-overlay"></div>
-                <div class="hero__slide-content">
-                  <span class="hero__slide-topic">{{ slide.topic }}</span>
-                  <p class="hero__slide-desc">{{ slide.description }}</p>
-                </div>
-              </div>
-            }
-
-            <div class="hero__slider-dots">
-              @for (slide of slides; track slide.topic; let i = $index) {
-                <button
-                  class="hero__slider-dot"
-                  [class.hero__slider-dot--active]="currentSlide() === i"
-                  (click)="goToSlide(i)"
-                  [attr.aria-label]="'Go to slide ' + (i + 1) + ': ' + slide.topic"
-                  type="button"
-                ></button>
-              }
-            </div>
           </div>
         </div>
       </div>

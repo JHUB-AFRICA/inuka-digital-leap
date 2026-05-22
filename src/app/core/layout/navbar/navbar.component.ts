@@ -1,7 +1,7 @@
 import { Component, signal, HostListener, AfterViewInit, OnDestroy, ChangeDetectionStrategy, inject } from '@angular/core';
 import { RouterLink, Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { NAV_LINKS, PARTNERS, SITE_CONFIG } from '../../constants';
+import { NAV_LINKS, SITE_CONFIG } from '../../constants';
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +16,6 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
 
   protected readonly siteName = SITE_CONFIG.name;
   protected readonly navLinks = NAV_LINKS;
-  protected readonly partners = PARTNERS;
   protected readonly isScrolled = signal(false);
   protected readonly isMobileOpen = signal(false);
   protected readonly activeSection = signal('hero');

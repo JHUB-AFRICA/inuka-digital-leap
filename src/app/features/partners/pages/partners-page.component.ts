@@ -1,11 +1,12 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.directive';
 import { PARTNERS } from '../../../core/constants';
 
 @Component({
   selector: 'app-partners-page',
   standalone: true,
-  imports: [ScrollRevealDirective],
+  imports: [RouterLink, ScrollRevealDirective],
   template: `
     <section class="page-hero">
       <div class="container" appScrollReveal="fade-up">
@@ -73,7 +74,7 @@ import { PARTNERS } from '../../../core/constants';
           Join us in building Kenya's digital workforce. Partner with Inuka Digital Leap
           to support technical training, provide industry attachments, or sponsor future cohorts.
         </p>
-        <a href="#cta" class="partners-cta__btn">
+            <a routerLink="/contact" class="partners-cta__btn">
           Get in touch
           <span class="pi pi-arrow-right" aria-hidden="true"></span>
         </a>

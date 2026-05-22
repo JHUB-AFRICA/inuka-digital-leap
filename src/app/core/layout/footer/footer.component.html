@@ -9,6 +9,13 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__col footer__col--brand">
+          <div class="footer__brand-logo">
+            <img
+              src="assets/logos/idl-logo.jpeg"
+              alt="Inuka Digital Leap"
+              class="footer__logo-img"
+            />
+          </div>
           <h3 class="footer__title">{{ siteName }}</h3>
           <p class="footer__tagline">{{ tagline }}</p>
           <div class="footer__social">
@@ -32,13 +39,22 @@
 
         <div class="footer__col">
           <h4 class="footer__heading">Quick Links</h4>
-          <ul class="footer__links">
-            @for (link of navLinks; track link.label) {
-              <li>
-                <a class="footer__link" [href]="'#' + link.fragment">{{ link.label }}</a>
-              </li>
-            }
-          </ul>
+          <div class="footer__links-columns">
+            <ul class="footer__links">
+              @for (link of quickLinksCol1; track link.label) {
+                <li>
+                  <a class="footer__link" [href]="'#' + link.fragment">{{ link.label }}</a>
+                </li>
+              }
+            </ul>
+            <ul class="footer__links">
+              @for (link of quickLinksCol2; track link.label) {
+                <li>
+                  <a class="footer__link" [href]="'#' + link.fragment">{{ link.label }}</a>
+                </li>
+              }
+            </ul>
+          </div>
         </div>
 
         <div class="footer__col">

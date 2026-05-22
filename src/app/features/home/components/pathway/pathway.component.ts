@@ -13,7 +13,7 @@ import { PATHWAY_STEPS } from '../../../../core/constants';
       <div class="container">
         <app-section-header
           title="Program Pathway"
-          subtitle="A structured 6-month journey from selection to deployment — transforming talented youth into certified digital infrastructure professionals."
+          subtitle="A structured 6-month journey from selection to deployment transforming talented youth into certified digital infrastructure professionals."
           label="The Journey"
         />
 
@@ -43,123 +43,125 @@ import { PATHWAY_STEPS } from '../../../../core/constants';
       </div>
     </section>
   `,
-  styles: [`
-    .pathway {
-      background: var(--color-surface);
-    }
-
-    .pathway__summary {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .pathway__steps {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 32px;
-    }
-
-    .pathway__step {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 18px;
-      background: var(--color-surface-container-lowest);
-      border: 1px solid var(--color-outline-variant);
-      border-radius: var(--rounded-xl);
-      transition: all var(--transition-base);
-
-      &:hover {
-        border-color: var(--color-electric-blue);
-        transform: translateY(-2px);
-      }
-    }
-
-    .pathway__node {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      background: var(--color-surface-container);
-      color: var(--color-outline);
-      border: 2px solid var(--color-outline-variant);
-      transition: all var(--transition-base);
-
-      .pi {
-        font-size: 0.9rem;
+  styles: [
+    `
+      .pathway {
+        background: var(--color-surface);
       }
 
-      &--completed {
-        background: var(--color-emerald-green);
-        border-color: var(--color-emerald-green);
-        color: white;
+      .pathway__summary {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
       }
 
-      &--active {
-        background: var(--color-electric-blue);
-        border-color: var(--color-electric-blue);
-        color: white;
-        box-shadow: 0 0 12px rgba(0, 174, 239, 0.3);
+      .pathway__steps {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 32px;
       }
-    }
 
-    .pathway__step-info {
-      text-align: left;
-    }
-
-    .pathway__step-number {
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      font-weight: 600;
-      color: var(--color-on-surface-variant);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      display: block;
-    }
-
-    .pathway__step-title {
-      font-family: var(--font-heading);
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--color-deep-navy);
-      margin: 0;
-    }
-
-    .pathway__cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--color-electric-blue);
-      padding: 12px 28px;
-      border: 2px solid var(--color-electric-blue);
-      border-radius: 9999px;
-      transition: all var(--transition-base);
-      text-decoration: none;
-
-      &:hover {
-        background: var(--color-electric-blue);
-        color: white;
-        box-shadow: var(--shadow-glow-blue);
-        gap: 12px;
-      }
-    }
-
-    @media (max-width: 768px) {
       .pathway__step {
-        width: 100%;
-        max-width: 280px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 18px;
+        background: var(--color-surface-container-lowest);
+        border: 1px solid var(--color-outline-variant);
+        border-radius: var(--rounded-xl);
+        transition: all var(--transition-base);
+
+        &:hover {
+          border-color: var(--color-electric-blue);
+          transform: translateY(-2px);
+        }
       }
-    }
-  `],
+
+      .pathway__node {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        background: var(--color-surface-container);
+        color: var(--color-outline);
+        border: 2px solid var(--color-outline-variant);
+        transition: all var(--transition-base);
+
+        .pi {
+          font-size: 0.9rem;
+        }
+
+        &--completed {
+          background: var(--color-emerald-green);
+          border-color: var(--color-emerald-green);
+          color: white;
+        }
+
+        &--active {
+          background: var(--color-electric-blue);
+          border-color: var(--color-electric-blue);
+          color: white;
+          box-shadow: 0 0 12px rgba(0, 174, 239, 0.3);
+        }
+      }
+
+      .pathway__step-info {
+        text-align: left;
+      }
+
+      .pathway__step-number {
+        font-family: var(--font-mono);
+        font-size: 0.6rem;
+        font-weight: 600;
+        color: var(--color-on-surface-variant);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        display: block;
+      }
+
+      .pathway__step-title {
+        font-family: var(--font-heading);
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--color-deep-navy);
+        margin: 0;
+      }
+
+      .pathway__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--color-electric-blue);
+        padding: 12px 28px;
+        border: 2px solid var(--color-electric-blue);
+        border-radius: 9999px;
+        transition: all var(--transition-base);
+        text-decoration: none;
+
+        &:hover {
+          background: var(--color-electric-blue);
+          color: white;
+          box-shadow: var(--shadow-glow-blue);
+          gap: 12px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .pathway__step {
+          width: 100%;
+          max-width: 280px;
+        }
+      }
+    `,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PathwayComponent {

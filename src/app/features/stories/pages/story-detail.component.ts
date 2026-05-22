@@ -25,8 +25,12 @@ import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.
       <!-- Featured Image -->
       <section class="detail-image">
         <div class="container">
-          <div class="detail-image__placeholder">
-            <span class="pi pi-newspaper" aria-hidden="true"></span>
+          <div class="detail-image__wrapper">
+            <img
+              src="assets/logos/idl-logo.jpeg"
+              alt="Inuka Digital Leap"
+              class="detail-image__img"
+            />
           </div>
         </div>
       </section>
@@ -159,16 +163,22 @@ import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.
       padding: 40px 0 0;
     }
 
-    .detail-image__placeholder {
+    .detail-image__wrapper {
       width: 100%;
       height: 400px;
-      background: linear-gradient(135deg, var(--color-deep-navy), #0a2a4a);
+      background: var(--color-deep-navy);
       border-radius: var(--rounded-2xl);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: rgba(255, 255, 255, 0.08);
-      font-size: 5rem;
+      overflow: hidden;
+    }
+
+    .detail-image__img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 48px;
     }
 
     .detail-content {
@@ -287,7 +297,7 @@ import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.
         padding: 100px 0 60px;
       }
 
-      .detail-image__placeholder {
+      .detail-image__wrapper {
         height: 240px;
       }
 
