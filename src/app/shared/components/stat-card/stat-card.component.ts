@@ -61,14 +61,14 @@ import { CounterAnimationDirective } from '../../directives/counter-animation.di
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, rgba(0, 174, 239, 0.1), rgba(0, 174, 239, 0.04));
+      background: linear-gradient(135deg, rgba(237, 27, 36, 0.1), rgba(237, 27, 36, 0.04));
       border-radius: var(--rounded-lg);
       margin: 0 auto 16px;
       transition: all var(--transition-base);
     }
 
     .stat-card:hover .stat-card__icon-wrapper {
-      background: linear-gradient(135deg, rgba(0, 174, 239, 0.18), rgba(0, 174, 239, 0.08));
+      background: linear-gradient(135deg, rgba(237, 27, 36, 0.18), rgba(237, 27, 36, 0.08));
       transform: scale(1.05);
     }
 

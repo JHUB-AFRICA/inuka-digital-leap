@@ -97,7 +97,7 @@ import { ACTIVITIES } from '../../../core/constants';
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(0, 174, 239, 0.12) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 30% 50%, rgba(237, 27, 36, 0.12) 0%, transparent 60%);
       pointer-events: none;
     }
 
@@ -105,7 +105,7 @@ import { ACTIVITIES } from '../../../core/constants';
       display: inline-block;
       font: var(--label-caps);
       color: var(--color-electric-blue);
-      background: rgba(0, 174, 239, 0.12);
+      background: rgba(237, 27, 36, 0.12);
       padding: 4px 16px;
       border-radius: var(--rounded-full);
       margin-bottom: 16px;
@@ -201,7 +201,7 @@ import { ACTIVITIES } from '../../../core/constants';
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, rgba(0, 174, 239, 0.06), rgba(22, 196, 127, 0.06));
+      background: linear-gradient(135deg, rgba(237, 27, 36, 0.06), rgba(22, 196, 127, 0.06));
       border-bottom: 1px solid var(--color-outline-variant);
     }
 
@@ -227,7 +227,7 @@ import { ACTIVITIES } from '../../../core/constants';
       font: var(--label-caps);
       font-size: 0.65rem;
       color: var(--color-electric-blue);
-      background: rgba(0, 174, 239, 0.08);
+      background: rgba(237, 27, 36, 0.08);
       padding: 3px 10px;
       border-radius: var(--rounded-full);
     }

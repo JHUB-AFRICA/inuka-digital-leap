@@ -101,7 +101,7 @@ import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(0, 174, 239, 0.12) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 30% 50%, rgba(237, 27, 36, 0.12) 0%, transparent 60%);
       pointer-events: none;
     }
 
@@ -126,7 +126,7 @@ import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.
       width: 80px;
       height: 80px;
       border-radius: var(--rounded-2xl);
-      background: rgba(0, 174, 239, 0.1);
+      background: rgba(237, 27, 36, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -144,7 +144,7 @@ import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.
       display: inline-block;
       font: var(--label-caps);
       color: var(--color-electric-blue);
-      background: rgba(0, 174, 239, 0.12);
+      background: rgba(237, 27, 36, 0.12);
       padding: 4px 16px;
       border-radius: var(--rounded-full);
       margin-bottom: 10px;
@@ -233,7 +233,7 @@ import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, rgba(0, 174, 239, 0.06), rgba(22, 196, 127, 0.06));
+      background: linear-gradient(135deg, rgba(237, 27, 36, 0.06), rgba(22, 196, 127, 0.06));
       border-bottom: 1px solid var(--color-outline-variant);
     }
 
@@ -259,7 +259,7 @@ import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.
       font: var(--label-caps);
       font-size: 0.65rem;
       color: var(--color-electric-blue);
-      background: rgba(0, 174, 239, 0.08);
+      background: rgba(237, 27, 36, 0.08);
       padding: 3px 10px;
       border-radius: var(--rounded-full);
     }

@@ -79,7 +79,7 @@ import { LEARNING_AREAS } from '../../../../core/constants';
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(0, 174, 239, 0.08);
+      background: rgba(237, 27, 36, 0.08);
       border-radius: var(--rounded-lg);
       margin-bottom: 20px;
     }

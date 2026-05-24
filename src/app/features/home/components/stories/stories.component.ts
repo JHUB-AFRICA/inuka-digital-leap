@@ -124,7 +124,7 @@ import { STORIES } from '../../../../core/constants';
       font: var(--label-caps);
       font-size: 0.65rem;
       color: var(--color-electric-blue);
-      background: rgba(0, 174, 239, 0.08);
+      background: rgba(237, 27, 36, 0.08);
       padding: 3px 10px;
       border-radius: var(--rounded-full);
     }

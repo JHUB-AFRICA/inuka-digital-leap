@@ -89,7 +89,7 @@
 
       &:hover {
         .navbar--scrolled & {
-          background: rgba(0, 174, 239, 0.06);
+          background: rgba(237, 27, 36, 0.06);
         }
       }
     }
@@ -102,7 +102,7 @@
     border-radius: 50%;
     background: var(--color-electric-blue);
     flex-shrink: 0;
-    box-shadow: 0 0 6px rgba(0, 174, 239, 0.6);
+    box-shadow: 0 0 6px rgba(237, 27, 36, 0.6);
   }
 
   &__actions {
@@ -219,7 +219,7 @@
 
     &--active {
       color: var(--color-electric-blue);
-      background: rgba(0, 174, 239, 0.06);
+      background: rgba(237, 27, 36, 0.06);
     }
   }
 }
@@ -255,7 +255,7 @@
   &:hover {
     background: #0095d4;
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 174, 239, 0.4);
+    box-shadow: 0 8px 30px rgba(237, 27, 36, 0.4);
   }
 
   .pi {

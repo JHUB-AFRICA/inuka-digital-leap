@@ -36,8 +36,8 @@ interface Milestone {
             <span class="about-hero__badge">About Inuka Digital Leap</span>
             <h1 class="about-hero__title">Building Kenya's Digital Future</h1>
             <p class="about-hero__subtitle">
-              A transformative partnership between JKUAT, Kenya Pipeline Company Foundation, and
-              JHUB Africa equipping Kenyan youth with world-class digital infrastructure skills.
+              A transformative partnership between Kenya Pipeline Company Foundation, JHUB Africa
+              and JKUAT equipping Kenyan youth with world-class digital infrastructure skills.
             </p>
           </div>
         </div>
@@ -82,7 +82,7 @@ interface Milestone {
               <p class="about-story__text">
                 The programme provides intensive, industry-aligned training in fibre optic
                 engineering, network infrastructure, broadband deployment, and digital technologies
-                — creating a direct pipeline from classroom to career.
+                creating a direct pipeline from classroom to career.
               </p>
               <p class="about-story__text">
                 With Kenya's digital transformation accelerating under Vision 2030, the demand for
@@ -224,7 +224,7 @@ interface Milestone {
         &--1 {
           width: 500px;
           height: 500px;
-          background: rgba(0, 174, 239, 0.08);
+          background: rgba(237, 27, 36, 0.08);
           top: -200px;
           left: -100px;
         }
@@ -441,7 +441,7 @@ interface Milestone {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: rgba(0, 174, 239, 0.08);
+        background: rgba(237, 27, 36, 0.08);
         border-radius: var(--rounded-lg);
         margin-bottom: 20px;
       }

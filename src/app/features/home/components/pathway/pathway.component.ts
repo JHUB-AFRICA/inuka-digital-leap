@@ -106,7 +106,7 @@ import { PATHWAY_STEPS } from '../../../../core/constants';
           background: var(--color-electric-blue);
           border-color: var(--color-electric-blue);
           color: white;
-          box-shadow: 0 0 12px rgba(0, 174, 239, 0.3);
+          box-shadow: 0 0 12px rgba(237, 27, 36, 0.3);
         }
       }
 

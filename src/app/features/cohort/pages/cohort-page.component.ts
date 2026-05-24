@@ -79,8 +79,8 @@ import { TRAINEES } from '../../../core/constants';
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(0, 174, 239, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 174, 239, 0.04) 1px, transparent 1px);
+        linear-gradient(rgba(237, 27, 36, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(237, 27, 36, 0.04) 1px, transparent 1px);
       background-size: 60px 60px;
     }
 
@@ -92,7 +92,7 @@ import { TRAINEES } from '../../../core/constants';
 
       &--1 {
         width: 500px; height: 500px;
-        background: rgba(0, 174, 239, 0.1);
+        background: rgba(237, 27, 36, 0.1);
         top: -200px; right: -100px;
       }
 
@@ -238,7 +238,7 @@ import { TRAINEES } from '../../../core/constants';
       letter-spacing: 0.02em;
 
       &--county {
-        background: rgba(0, 174, 239, 0.08);
+        background: rgba(237, 27, 36, 0.08);
         color: var(--color-electric-blue);
       }
 

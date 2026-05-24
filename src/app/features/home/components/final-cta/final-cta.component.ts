@@ -109,7 +109,7 @@ import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reve
         &--1 {
           width: 500px;
           height: 500px;
-          background: rgba(0, 174, 239, 0.1);
+          background: rgba(237, 27, 36, 0.1);
           top: -200px;
           right: -100px;
         }

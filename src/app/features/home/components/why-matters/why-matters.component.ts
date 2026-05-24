@@ -80,7 +80,7 @@ import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reve
       margin-bottom: 12px;
       padding: 4px 16px;
       border-radius: var(--rounded-full);
-      background: rgba(0, 174, 239, 0.08);
+      background: rgba(237, 27, 36, 0.08);
     }
 
     .why-matters__title {

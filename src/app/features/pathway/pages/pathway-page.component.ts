@@ -104,8 +104,8 @@ import { PATHWAY_STEPS } from '../../../core/constants';
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(0, 174, 239, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 174, 239, 0.04) 1px, transparent 1px);
+        linear-gradient(rgba(237, 27, 36, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(237, 27, 36, 0.04) 1px, transparent 1px);
       background-size: 60px 60px;
     }
 
@@ -117,7 +117,7 @@ import { PATHWAY_STEPS } from '../../../core/constants';
 
       &--1 {
         width: 500px; height: 500px;
-        background: rgba(0, 174, 239, 0.1);
+        background: rgba(237, 27, 36, 0.1);
         top: -200px; right: -100px;
       }
 
@@ -240,7 +240,7 @@ import { PATHWAY_STEPS } from '../../../core/constants';
       &--active {
         background: var(--color-electric-blue);
         color: white;
-        box-shadow: 0 0 16px rgba(0, 174, 239, 0.4);
+        box-shadow: 0 0 16px rgba(237, 27, 36, 0.4);
         animation: pulseNode 2s ease-in-out infinite;
       }
 
@@ -252,8 +252,8 @@ import { PATHWAY_STEPS } from '../../../core/constants';
     }
 
     @keyframes pulseNode {
-      0%, 100% { box-shadow: 0 0 12px rgba(0, 174, 239, 0.3); }
-      50% { box-shadow: 0 0 24px rgba(0, 174, 239, 0.5); }
+      0%, 100% { box-shadow: 0 0 12px rgba(237, 27, 36, 0.3); }
+      50% { box-shadow: 0 0 24px rgba(237, 27, 36, 0.5); }
     }
 
     .pathway-timeline__card {
@@ -322,7 +322,7 @@ import { PATHWAY_STEPS } from '../../../core/constants';
       }
 
       &--active {
-        background: rgba(0, 174, 239, 0.1);
+        background: rgba(237, 27, 36, 0.1);
         color: var(--color-electric-blue);
       }
 

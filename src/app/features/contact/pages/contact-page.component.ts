@@ -188,7 +188,7 @@ import { PARTNERS } from '../../../core/constants';
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(0, 174, 239, 0.12) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 30% 50%, rgba(237, 27, 36, 0.12) 0%, transparent 60%);
       pointer-events: none;
     }
 
@@ -196,7 +196,7 @@ import { PARTNERS } from '../../../core/constants';
       display: inline-block;
       font: var(--label-caps);
       color: var(--color-electric-blue);
-      background: rgba(0, 174, 239, 0.12);
+      background: rgba(237, 27, 36, 0.12);
       padding: 4px 16px;
       border-radius: var(--rounded-full);
       margin-bottom: 16px;
@@ -282,7 +282,7 @@ import { PARTNERS } from '../../../core/constants';
 
       &:focus {
         border-color: var(--color-electric-blue);
-        box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.1);
+        box-shadow: 0 0 0 3px rgba(237, 27, 36, 0.1);
       }
     }
 
@@ -355,7 +355,7 @@ import { PARTNERS } from '../../../core/constants';
       width: 42px;
       height: 42px;
       border-radius: var(--rounded-xl);
-      background: rgba(0, 174, 239, 0.08);
+      background: rgba(237, 27, 36, 0.08);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -413,7 +413,7 @@ import { PARTNERS } from '../../../core/constants';
       &:hover {
         border-color: var(--color-electric-blue);
         color: var(--color-electric-blue);
-        background: rgba(0, 174, 239, 0.06);
+        background: rgba(237, 27, 36, 0.06);
       }
     }
 
@@ -431,7 +431,7 @@ import { PARTNERS } from '../../../core/constants';
       display: inline-block;
       font: var(--label-caps);
       color: var(--color-electric-blue);
-      background: rgba(0, 174, 239, 0.08);
+      background: rgba(237, 27, 36, 0.08);
       padding: 4px 16px;
       border-radius: var(--rounded-full);
       margin-bottom: 12px;

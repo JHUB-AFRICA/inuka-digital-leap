@@ -130,7 +130,7 @@ import { PARTNERS } from '../../../core/constants';
         inset: 0;
         background: radial-gradient(
           ellipse at 30% 50%,
-          rgba(0, 174, 239, 0.12) 0%,
+          rgba(237, 27, 36, 0.12) 0%,
           transparent 60%
         );
         pointer-events: none;
@@ -191,7 +191,7 @@ import { PARTNERS } from '../../../core/constants';
         width: 64px;
         height: 64px;
         border-radius: var(--rounded-2xl);
-        background: rgba(0, 174, 239, 0.08);
+        background: rgba(237, 27, 36, 0.08);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -342,7 +342,7 @@ import { PARTNERS } from '../../../core/constants';
         display: inline-block;
         font: var(--label-caps);
         color: var(--color-electric-blue);
-        background: rgba(0, 174, 239, 0.08);
+        background: rgba(237, 27, 36, 0.08);
         padding: 4px 16px;
         border-radius: var(--rounded-full);
         margin-bottom: 12px;

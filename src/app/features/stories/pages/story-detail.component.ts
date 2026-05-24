@@ -104,7 +104,7 @@ import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(0, 174, 239, 0.12) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 30% 50%, rgba(237, 27, 36, 0.12) 0%, transparent 60%);
       pointer-events: none;
     }
 
@@ -129,7 +129,7 @@ import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.
       display: inline-block;
       font: var(--label-caps);
       color: var(--color-electric-blue);
-      background: rgba(0, 174, 239, 0.12);
+      background: rgba(237, 27, 36, 0.12);
       padding: 4px 16px;
       border-radius: var(--rounded-full);
       margin-bottom: 12px;
@@ -251,7 +251,7 @@ import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.
       font: var(--label-caps);
       font-size: 0.65rem;
       color: var(--color-electric-blue);
-      background: rgba(0, 174, 239, 0.08);
+      background: rgba(237, 27, 36, 0.08);
       padding: 3px 10px;
       border-radius: var(--rounded-full);
     }
