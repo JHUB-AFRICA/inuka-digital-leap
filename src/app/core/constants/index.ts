@@ -16,7 +16,6 @@ export const NAV_LINKS = [
   { label: 'Stories', fragment: 'stories', path: '/stories' },
   { label: 'Impact', fragment: 'impact' },
   { label: 'Partners', fragment: 'partners', path: '/partners' },
-  { label: 'Apply', fragment: 'apply', path: '/apply' },
   { label: 'Contact', fragment: 'contact', path: '/contact' },
 ] as const;
 
@@ -100,23 +99,6 @@ export interface Partner {
 
 export const PARTNERS: Partner[] = [
   {
-    name: 'JKUAT',
-    slug: 'jkuat',
-    logo: 'assets/logos/jkuat.png',
-    alt: 'Jomo Kenyatta University of Agriculture and Technology',
-    fullName: 'Jomo Kenyatta University of Agriculture and Technology',
-    type: 'Academic Institution',
-    description:
-      'JKUAT is a leading Kenyan university providing academic leadership, research expertise, and accredited training programmes that form the educational backbone of the Inuka Digital Leap initiative.',
-    focus: [
-      'Curriculum Development',
-      'Accredited Certification',
-      'Research & Innovation',
-      'Training Facilities',
-    ],
-    website: 'https://www.jkuat.ac.ke',
-  },
-  {
     name: 'KPC Foundation',
     slug: 'kpc-foundation',
     logo: 'assets/logos/Logo_of_KPC.jpg',
@@ -149,6 +131,23 @@ export const PARTNERS: Partner[] = [
       'Trainee Placement',
     ],
     website: 'https://www.jhubafrica.com',
+  },
+  {
+    name: 'JKUAT',
+    slug: 'jkuat',
+    logo: 'assets/logos/jkuat.png',
+    alt: 'Jomo Kenyatta University of Agriculture and Technology',
+    fullName: 'Jomo Kenyatta University of Agriculture and Technology',
+    type: 'Academic Institution',
+    description:
+      'JKUAT is a leading Kenyan university providing academic leadership, research expertise, and accredited training programmes that form the educational backbone of the Inuka Digital Leap initiative.',
+    focus: [
+      'Curriculum Development',
+      'Accredited Certification',
+      'Research & Innovation',
+      'Training Facilities',
+    ],
+    website: 'https://www.jkuat.ac.ke',
   },
 ];
 
@@ -385,7 +384,7 @@ export const STORIES: Story[] = [
       "In a field traditionally dominated by men, the Inuka Digital Leap programme is charting a new course. With 42% female representation in its first cohort, the programme is demonstrating that gender inclusion is not just a goal but an achievable reality.\n\nThe trainees are thriving in what has historically been a male-dominated technical field. From fibre optic splicing to network configuration, the women of Cohort 1 are proving that technical skills have no gender.\n\n'When I first told my family I wanted to pursue fibre optics, they were surprised,' shares Grace Wanjiru, a trainee from Nyeri. 'But after seeing what I've learned — from fusion splicing to network testing — they are incredibly proud. This programme has given me a career I never imagined was possible.'\n\nThe programme's deliberate focus on inclusion includes targeted outreach to female students, mentorship from women already working in the tech industry, and a supportive learning environment that encourages participation.",
     date: 'January 20, 2026',
     category: 'Insights',
-    image: '/assets/discussion.jpg',
+    image: '/assets/hero-image.png',
     featured: false,
   },
   {
@@ -409,7 +408,7 @@ export const STORIES: Story[] = [
       "The Inuka Digital Leap programme hosted a mentorship forum featuring senior engineers and technology leaders from Kenya's leading telecommunications companies. The event brought together experts from Safaricom, Telkom Kenya, and several fibre network operators for a day of knowledge sharing and career guidance.\n\nThe forum covered a wide range of topics, from the current state of Kenya's network infrastructure to emerging technologies like 5G, edge computing, and software-defined networking. The mentors shared their personal career journeys, offering valuable insights into the skills and attributes that drive success in the industry.\n\n'The telecommunications industry in Kenya is at an inflection point,' said James Ochieng, a network architect at Safaricom. 'With the rapid expansion of fibre networks and the upcoming 5G rollout, there has never been a better time to enter this field.'\n\nThe mentorship forum has now been established as a regular feature of the programme, with plans to expand it to include international experts and virtual participation from partner organisations.",
     date: 'November 30, 2025',
     category: 'Mentorship',
-    image: '/assets/compare-fibre-.jpg',
+    image: '/assets/compare-fibre.jpg',
     featured: false,
   },
   {

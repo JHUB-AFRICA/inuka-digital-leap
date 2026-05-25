@@ -86,7 +86,7 @@ import { ACTIVITIES } from '../../../core/constants';
   `,
   styles: [`
     .page-hero {
-      background: linear-gradient(135deg, var(--color-deep-navy) 0%, #0a2a4a 100%);
+      background: url('/assets/optical.jpg') center / cover no-repeat;
       padding: 120px 0 100px;
       text-align: center;
       position: relative;
@@ -181,38 +181,69 @@ import { ACTIVITIES } from '../../../core/constants';
     }
 
     .activities-page__card {
-      display: block;
+      display: flex;
+      flex-direction: column;
       text-decoration: none;
       background: var(--color-surface-container-lowest);
       border: 1px solid var(--color-outline-variant);
-      border-radius: var(--rounded-xl);
+      border-radius: 20px;
       overflow: hidden;
-      transition: all var(--transition-base);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--color-electric-blue), #16c47f);
+        opacity: 0;
+        transition: opacity 0.35s ease;
+      }
 
       &:hover {
-        border-color: var(--color-electric-blue);
-        box-shadow: var(--shadow-glow-blue);
-        transform: translateY(-4px);
+        border-color: transparent;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(237, 27, 36, 0.08);
+        transform: translateY(-6px);
+
+        &::before {
+          opacity: 1;
+        }
+
+        .activities-page__card-visual {
+          transform: scale(1.05);
+        }
       }
     }
 
     .activities-page__card-visual {
-      height: 160px;
+      height: 140px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, rgba(237, 27, 36, 0.06), rgba(22, 196, 127, 0.06));
+      background: linear-gradient(135deg, rgba(237, 27, 36, 0.04), rgba(22, 196, 127, 0.04));
       border-bottom: 1px solid var(--color-outline-variant);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .activities-page__card-icon {
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: var(--color-electric-blue);
-      opacity: 0.45;
+      opacity: 0.5;
+      transition: opacity 0.35s ease;
+    }
+
+    .activities-page__card:hover .activities-page__card-icon {
+      opacity: 0.8;
     }
 
     .activities-page__card-body {
       padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     .activities-page__card-meta {
@@ -257,6 +288,7 @@ import { ACTIVITIES } from '../../../core/constants';
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      flex: 1;
     }
 
     .activities-page__card-link {
@@ -267,7 +299,7 @@ import { ACTIVITIES } from '../../../core/constants';
       font-size: 0.85rem;
       font-weight: 600;
       color: var(--color-electric-blue);
-      transition: gap var(--transition-fast);
+      transition: gap 0.3s ease;
 
       &:hover {
         gap: 10px;
@@ -288,12 +320,14 @@ import { ACTIVITIES } from '../../../core/constants';
     }
 
     @media (max-width: 768px) {
-      .activities-page__grid {
-        grid-template-columns: 1fr;
-      }
-
       .page-hero {
         padding: 100px 0 70px;
+      }
+
+      .activities-page__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 40px 0 20px;
       }
     }
   `],

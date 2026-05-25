@@ -12,7 +12,7 @@ import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reve
       <div class="container">
         <app-section-header
           title="About Inuka Digital Leap"
-          subtitle="A transformative partnership between JKUAT, Kenya Pipeline Company Foundation, and JHUB Africa."
+          subtitle="A transformative partnership between Kenya Pipeline Company Foundation, JHUB Africa and Jomo Kenyatta University of Agriculture and Technology."
         />
 
         <div class="about__layout">

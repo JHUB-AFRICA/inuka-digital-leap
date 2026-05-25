@@ -26,9 +26,12 @@ import { STORIES } from '../../../../core/constants';
               [delay]="i * 100"
             >
               <div class="stories__card-image">
-                <div class="stories__card-placeholder">
-                  <span class="pi pi-file-text" aria-hidden="true"></span>
-                </div>
+                <img
+                  [src]="story.image"
+                  [alt]="story.title"
+                  class="stories__card-img"
+                  loading="lazy"
+                />
               </div>
               <div class="stories__card-body">
                 <div class="stories__card-meta">
@@ -97,15 +100,15 @@ import { STORIES } from '../../../../core/constants';
       overflow: hidden;
     }
 
-    .stories__card-placeholder {
+    .stories__card-img {
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, var(--color-deep-navy), #0a2a4a);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255, 255, 255, 0.12);
-      font-size: 3rem;
+      object-fit: cover;
+      display: block;
+    }
+
+    .stories__card--featured .stories__card-image {
+      height: 280px;
     }
 
     .stories__card-body {

@@ -68,16 +68,17 @@ interface Milestone {
                 <div class="about-story__stat-divider"></div>
                 <div class="about-story__stat">
                   <span class="about-story__stat-value">3</span>
-                  <span class="about-story__stat-label">Partner Counties</span>
+                  <span class="about-story__stat-label">Industry Partners</span>
                 </div>
               </div>
             </div>
             <div class="about-story__content" appScrollReveal="fade-left" [delay]="100">
               <h2 class="about-story__title">Our Story</h2>
               <p class="about-story__text">
-                Inuka Digital Leap was born from a shared vision between JKUAT, Kenya Pipeline
-                Company Foundation, and JHUB Africa to address Kenya's critical shortage of skilled
-                digital infrastructure professionals.
+                Inuka Digital Leap was born from a shared vision between Kenya Pipeline Company
+                Foundation, JHUB Africa and Jomo Kenyatta University of Agriculture & Technology
+                (JKUAT) to address Kenya's critical shortage of skilled digital infrastructure
+                professionals.
               </p>
               <p class="about-story__text">
                 The programme provides intensive, industry-aligned training in fibre optic
@@ -207,12 +208,8 @@ interface Milestone {
       .about-hero__overlay {
         position: absolute;
         inset: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(7, 27, 52, 0.88) 0%,
-          rgba(7, 27, 52, 0.7) 50%,
-          rgba(7, 27, 52, 0.85) 100%
-        );
+        background: rgba(7, 27, 52, 0.08);
+        pointer-events: none;
       }
 
       .about-hero__glow {
