@@ -6,4 +6,5 @@ from .serializers import MetricSerializer
 
 class MetricViewSet(viewsets.ModelViewSet):
     queryset = Metric.objects.all()
+    serializer_class = MetricSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]

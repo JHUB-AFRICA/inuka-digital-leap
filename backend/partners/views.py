@@ -6,4 +6,5 @@ from .serializers import PartnerSerializer
 
 class PartnerViewSet(viewsets.ModelViewSet):
     queryset = Partner.objects.all()
+    serializer_class = PartnerSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
