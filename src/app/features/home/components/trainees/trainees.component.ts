@@ -74,8 +74,14 @@ export class TraineesComponent implements OnInit {
   protected readonly fellows = signal<Fellow[]>([]);
 
   ngOnInit(): void {
-    this.cohortService.getFellows().subscribe({
-      next: (data) => this.fellows.set(data.slice(0, 4)),
+    this.cohortService.getActiveCohort().subscribe({
+      next: (cohort) => {
+        if (!cohort) return;
+        this.cohortService.getFellowsByCohort(cohort.id).subscribe({
+          next: (data) => this.fellows.set(data.slice(0, 4)),
+          error: () => {}
+        });
+      },
       error: () => {}
     });
   }

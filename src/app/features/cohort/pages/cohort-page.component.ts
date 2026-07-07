@@ -164,10 +164,19 @@ export class CohortPageComponent implements OnInit {
   protected readonly loading = signal(true);
 
   ngOnInit(): void {
-    this.cohortService.getFellows().subscribe({
-      next: (data) => {
-        this.fellows.set(data);
-        this.loading.set(false);
+    this.cohortService.getActiveCohort().subscribe({
+      next: (cohort) => {
+        if (!cohort) {
+          this.loading.set(false);
+          return;
+        }
+        this.cohortService.getFellowsByCohort(cohort.id).subscribe({
+          next: (data) => {
+            this.fellows.set(data);
+            this.loading.set(false);
+          },
+          error: () => this.loading.set(false)
+        });
       },
       error: () => this.loading.set(false)
     });
