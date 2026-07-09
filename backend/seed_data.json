@@ -1,0 +1,657 @@
+[
+{
+  "model": "cohorts.cohort",
+  "pk": "56610bcc-90b4-4e50-b2ff-e8e85c49e5e7",
+  "fields": {
+    "name": "Cohort 2",
+    "focus_area": "Cybersecurity & Cloud",
+    "start_date": "2026-07-07",
+    "end_date": "2026-07-07",
+    "trainee_count": 30,
+    "status": "upcoming",
+    "created_at": "2026-07-07T07:21:53.735Z"
+  }
+},
+{
+  "model": "cohorts.cohort",
+  "pk": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+  "fields": {
+    "name": "Cohort 1",
+    "focus_area": "FibreOptic",
+    "start_date": "2026-07-07",
+    "end_date": "2026-12-07",
+    "trainee_count": 15,
+    "status": "active",
+    "created_at": "2026-07-06T15:36:39.894Z"
+  }
+},
+{
+  "model": "cohorts.fellow",
+  "pk": "09c86958-4e09-4a49-bf6f-33808a84e518",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "full_name": "Amina Said",
+    "county": "Lamu",
+    "education_background": "Certificate in ICT",
+    "technical_interest": "Fibre Optics",
+    "specialization": "Fibre Optic Engineering",
+    "bio": "Learning fibre optic splicing and testing has given me a career I never imagined.",
+    "quote": "Learning fibre optic splicing and testing has given me a career I never imagined.",
+    "placement_status": "in_training",
+    "portfolio_url": "",
+    "photo": "",
+    "is_featured": false,
+    "created_at": "2026-07-06T15:38:41.166Z"
+  }
+},
+{
+  "model": "cohorts.fellow",
+  "pk": "18e9fa65-5582-415b-b56b-906bc953cc37",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "full_name": "James Kiprono",
+    "county": "Kericho",
+    "education_background": "Diploma in IT",
+    "technical_interest": "Cloud Engineering",
+    "specialization": "Cloud Engineering",
+    "bio": "From a small town in Kericho to deploying cloud solutions, Inuka transformed my life.",
+    "quote": "From a small town in Kericho to deploying cloud solutions, Inuka transformed my life.",
+    "placement_status": "in_training",
+    "portfolio_url": "",
+    "photo": "",
+    "is_featured": true,
+    "created_at": "2026-07-06T15:38:41.161Z"
+  }
+},
+{
+  "model": "cohorts.fellow",
+  "pk": "19a63d40-529b-4feb-b06d-5bf0d6a8b211",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "full_name": "Peter Otieno",
+    "county": "Kisumu",
+    "education_background": "BSc IT",
+    "technical_interest": "Broadband",
+    "specialization": "Broadband Deployment",
+    "bio": "Inuka equipped me with the practical skills to deploy and maintain broadband infrastructure.",
+    "quote": "Inuka equipped me with the practical skills to deploy and maintain broadband infrastructure.",
+    "placement_status": "in_training",
+    "portfolio_url": "",
+    "photo": "",
+    "is_featured": false,
+    "created_at": "2026-07-06T15:38:41.168Z"
+  }
+},
+{
+  "model": "cohorts.fellow",
+  "pk": "1fbef470-52b1-48cc-88eb-55d7a904651b",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "full_name": "Daniel Mwangi",
+    "county": "Nakuru",
+    "education_background": "Diploma in Networking",
+    "technical_interest": "Network Reliability",
+    "specialization": "Network Reliability",
+    "bio": "The hands-on experience and mentorship I received at Inuka prepared me for the real world.",
+    "quote": "The hands-on experience and mentorship I received at Inuka prepared me for the real world.",
+    "placement_status": "in_training",
+    "portfolio_url": "",
+    "photo": "",
+    "is_featured": false,
+    "created_at": "2026-07-06T15:38:41.164Z"
+  }
+},
+{
+  "model": "cohorts.fellow",
+  "pk": "41aa0f78-f681-4554-9af2-a982456c56a1",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "full_name": "Grace Akinyi",
+    "county": "Nairobi",
+    "education_background": "BSc Computer Science",
+    "technical_interest": "Network Engineering",
+    "specialization": "Network Engineering",
+    "bio": "Inuka gave me the skills and confidence to build Kenya's digital future. This is more than a programme, it's a movement.",
+    "quote": "Inuka gave me the skills and confidence to build Kenya's digital future. This is more than a programme, it's a movement.",
+    "placement_status": "in_training",
+    "portfolio_url": "",
+    "photo": "",
+    "is_featured": true,
+    "created_at": "2026-07-06T15:38:41.156Z"
+  }
+},
+{
+  "model": "cohorts.fellow",
+  "pk": "4cbbac71-1f3b-4b38-bb1f-8b7d8d95519e",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "full_name": "Kevin Mboya",
+    "county": "Machakos",
+    "education_background": "Diploma in IT",
+    "technical_interest": "Automation",
+    "specialization": "Infrastructure Automation",
+    "bio": "Automation is the future of network management, and Inuka gave me a head start.",
+    "quote": "Automation is the future of network management, and Inuka gave me a head start.",
+    "placement_status": "in_training",
+    "portfolio_url": "",
+    "photo": "",
+    "is_featured": false,
+    "created_at": "2026-07-06T15:38:41.171Z"
+  }
+},
+{
+  "model": "cohorts.fellow",
+  "pk": "4f64f3a0-27d1-4e8d-9e23-df0de1625cc8",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "full_name": "Fatima Hassan",
+    "county": "Mombasa",
+    "education_background": "BSc Telecommunication",
+    "technical_interest": "Telecommunication",
+    "specialization": "Telecommunication",
+    "bio": "I never imagined I would be maintaining critical national infrastructure.",
+    "quote": "I never imagined I would be maintaining critical national infrastructure.",
+    "placement_status": "in_training",
+    "portfolio_url": "",
+    "photo": "",
+    "is_featured": true,
+    "created_at": "2026-07-06T15:38:41.163Z"
+  }
+},
+{
+  "model": "cohorts.fellow",
+  "pk": "769b9355-a49d-40e5-9016-2d44a525eee9",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "full_name": "Sarah Wanjiku",
+    "county": "Nyeri",
+    "education_background": "BSc Computer Science",
+    "technical_interest": "Cybersecurity",
+    "specialization": "Network Security",
+    "bio": "The cybersecurity modules opened my eyes to how critical infrastructure protection works.",
+    "quote": "The cybersecurity modules opened my eyes to how critical infrastructure protection works.",
+    "placement_status": "in_training",
+    "portfolio_url": "",
+    "photo": "",
+    "is_featured": false,
+    "created_at": "2026-07-06T15:38:41.169Z"
+  }
+},
+{
+  "model": "cohorts.fellow",
+  "pk": "ac4180dc-d23c-4d7d-897c-8b39e6aaf23b",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "full_name": "Nancy Akoth",
+    "county": "Siaya",
+    "education_background": "BSc IT",
+    "technical_interest": "Networking",
+    "specialization": "Network Engineering",
+    "bio": "The mentorship and practical labs gave me confidence to work on real network infrastructure.",
+    "quote": "The mentorship and practical labs gave me confidence to work on real network infrastructure.",
+    "placement_status": "in_training",
+    "portfolio_url": "",
+    "photo": "",
+    "is_featured": false,
+    "created_at": "2026-07-06T15:38:41.175Z"
+  }
+},
+{
+  "model": "cohorts.fellow",
+  "pk": "d89c423e-3961-4fa9-bcaa-86e2e4db6547",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "full_name": "Esther Chebet",
+    "county": "Eldoret",
+    "education_background": "BSc Telecommunication",
+    "technical_interest": "Telecommunication",
+    "specialization": "Telecommunication",
+    "bio": "I gained hands-on experience with tools and technologies shaping Kenya's digital landscape.",
+    "quote": "I gained hands-on experience with tools and technologies shaping Kenya's digital landscape.",
+    "placement_status": "in_training",
+    "portfolio_url": "",
+    "photo": "",
+    "is_featured": false,
+    "created_at": "2026-07-06T15:38:41.172Z"
+  }
+},
+{
+  "model": "cohorts.fellow",
+  "pk": "db030754-1d60-4524-b375-078107e4ef7e",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "full_name": "Brian Kiprop",
+    "county": "Bomet",
+    "education_background": "Diploma in Computer Science",
+    "technical_interest": "Cloud",
+    "specialization": "Cloud Infrastructure",
+    "bio": "From a small town to managing cloud deployments — Inuka changed my trajectory completely.",
+    "quote": "From a small town to managing cloud deployments — Inuka changed my trajectory completely.",
+    "placement_status": "in_training",
+    "portfolio_url": "",
+    "photo": "",
+    "is_featured": false,
+    "created_at": "2026-07-06T15:38:41.173Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": "03dab206-dce2-4ef7-bf73-da60e7a2f5c3",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "title": "Network Infrastructure Design Lab",
+    "description": "Trainees design fibre optic network layouts and calculate link budgets.",
+    "activity_type": "lab",
+    "activity_date": "2026-08-15",
+    "photo": "",
+    "tag": "design",
+    "created_at": "2026-07-06T15:57:25.421Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": "04946275-e761-4519-9196-c41394b57168",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "title": "Hands-on Fibre Optic Splicing Lab",
+    "description": "Trainees gain practical experience in fusion splicing, mechanical splicing, and connector termination.",
+    "activity_type": "lab",
+    "activity_date": "2026-07-01",
+    "photo": "",
+    "tag": "fibre-optics",
+    "created_at": "2026-07-06T15:57:25.411Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": "23513902-8861-4ecf-8ada-ca0845b7c1db",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "title": "Certification Preparation Programme",
+    "description": "Structured preparation sessions for industry-recognised certifications in fibre optics.",
+    "activity_type": "workshop",
+    "activity_date": "2026-11-01",
+    "photo": "",
+    "tag": "certification",
+    "created_at": "2026-07-06T15:57:25.420Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": "376f4967-53c2-46d6-b61e-2241cb5f80e8",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "title": "Safety and Compliance Training",
+    "description": "Essential training in workplace safety, PPE usage, and regulatory compliance.",
+    "activity_type": "workshop",
+    "activity_date": "2026-06-15",
+    "photo": "",
+    "tag": "safety",
+    "created_at": "2026-07-06T15:57:25.423Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": "3990dc8b-27c6-4640-917a-dde87b4eef67",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "title": "OTDR and Power Meter Practical Sessions",
+    "description": "Trainees learn to operate optical time-domain reflectometers and power meters for fibre characterisation.",
+    "activity_type": "lab",
+    "activity_date": "2026-06-01",
+    "photo": "",
+    "tag": "testing",
+    "created_at": "2026-07-06T15:57:25.414Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": "4d39933a-b174-41e7-8c20-b23898e808ec",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "title": "Portfolio Development Workshop",
+    "description": "Trainees build professional portfolios showcasing their technical projects and certifications.",
+    "activity_type": "workshop",
+    "activity_date": "2026-07-15",
+    "photo": "",
+    "tag": "career",
+    "created_at": "2026-07-06T15:57:25.417Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": "b5af62cd-b0d1-4032-b0ad-a4fd40b1bc40",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "title": "Field Demonstrations at Active Deployment Sites",
+    "description": "Trainees visit live fibre deployment projects to observe cable blowing and aerial installation.",
+    "activity_type": "field_demo",
+    "activity_date": "2026-08-01",
+    "photo": "",
+    "tag": "field",
+    "created_at": "2026-07-06T15:57:25.415Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": "b717978a-81e6-438d-a32d-0e18a07e1af3",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "title": "Industry Masterclasses with Leading Engineers",
+    "description": "Senior engineers deliver intensive sessions on advanced topics in network infrastructure.",
+    "activity_type": "masterclass",
+    "activity_date": "2026-07-20",
+    "photo": "",
+    "tag": "masterclass",
+    "created_at": "2026-07-06T15:57:25.419Z"
+  }
+},
+{
+  "model": "activities.activity",
+  "pk": "e1095eb6-ed61-4b88-9b62-c2cc54738d5b",
+  "fields": {
+    "cohort": "d6725c22-d0cd-486d-b272-27fde3482d7e",
+    "title": "Broadband Deployment and Last-Mile Connectivity",
+    "description": "Focused training on broadband network deployment strategies for underserved areas.",
+    "activity_type": "lab",
+    "activity_date": "2026-09-01",
+    "photo": "",
+    "tag": "broadband",
+    "created_at": "2026-07-06T15:57:25.424Z"
+  }
+},
+{
+  "model": "content.post",
+  "pk": "227200d2-661d-40f0-9e84-581b024ab10b",
+  "fields": {
+    "author": 1,
+    "title": "Community Outreach: Digital Literacy Workshop in Kiambu County",
+    "slug": "community-outreach-digital-literacy-workshop-in-kiambu-county",
+    "content": "Trainees from the Inuka Digital Leap programme led a digital literacy workshop for local youth in Kiambu County. The workshop covered topics such as basic internet navigation, online safety, and career pathways in technology.",
+    "category": "blog",
+    "cover_image": "",
+    "is_published": true,
+    "published_at": "2026-07-06T15:57:06.304Z",
+    "created_at": "2026-07-06T15:57:06.304Z"
+  }
+},
+{
+  "model": "content.post",
+  "pk": "2791f15a-e70d-4164-baa5-b4671c06cea9",
+  "fields": {
+    "author": 1,
+    "title": "Kenya Pipeline Foundation Commits to Digital Skills Development",
+    "slug": "kenya-pipeline-foundation-commits-to-digital-skills-development",
+    "content": "The Kenya Pipeline Foundation has announced a significant commitment to expanding the Inuka Digital Leap programme, pledging resources to scale the initiative to reach more young Kenyans across additional counties. This partnership will focus on addressing the critical skills gap in fibre optics engineering, a field experiencing unprecedented demand as Kenya accelerates its national fibre rollout.",
+    "category": "news",
+    "cover_image": "",
+    "is_published": true,
+    "published_at": "2026-07-06T15:57:06.288Z",
+    "created_at": "2026-07-06T15:57:06.289Z"
+  }
+},
+{
+  "model": "content.post",
+  "pk": "40d07af2-fadc-470f-a103-f9fe64fafd49",
+  "fields": {
+    "author": 1,
+    "title": "Why Fibre Optics is the Next Frontier for Kenya's Youth",
+    "slug": "why-fibre-optics-is-the-next-frontier-for-kenyas-youth",
+    "content": "Kenya's digital transformation is being built on a foundation of fibre optics. As the government pushes forward with its ambitious national fibre rollout, the demand for skilled fibre optic technicians has skyrocketed. The Inuka Digital Leap programme is helping to fill this gap by providing practical, industry-aligned training in fibre optic engineering.",
+    "category": "blog",
+    "cover_image": "",
+    "is_published": true,
+    "published_at": "2026-07-06T15:57:06.293Z",
+    "created_at": "2026-07-06T15:57:06.293Z"
+  }
+},
+{
+  "model": "content.post",
+  "pk": "4378ba73-d2a3-48d8-87d7-345d2d272a22",
+  "fields": {
+    "author": 1,
+    "title": "JKUAT and JHUB Africa Sign MoU to Expand Digital Skills Programme",
+    "slug": "jkuat-and-jhub-africa-sign-mou-to-expand-digital-skills-programme",
+    "content": "Jomo Kenyatta University of Agriculture and Technology and JHUB Africa have signed a renewed Memorandum of Understanding that expands the Inuka Digital Leap programme to four additional counties. The expanded partnership will establish new training centres in Kisumu, Nakuru, Meru, and Mombasa.",
+    "category": "news",
+    "cover_image": "",
+    "is_published": true,
+    "published_at": "2026-07-06T15:57:06.296Z",
+    "created_at": "2026-07-06T15:57:06.297Z"
+  }
+},
+{
+  "model": "content.post",
+  "pk": "5c00bf4e-c9f2-4962-bd6b-fc89dcb821f2",
+  "fields": {
+    "author": 1,
+    "title": "Cohort 1 Trainees Begin Industry Attachments Across Kenya",
+    "slug": "cohort-1-trainees-begin-industry-attachments-across-kenya",
+    "content": "The trainees of Cohort 1 have commenced their industry attachments with partner organisations across Kenya, marking the final phase of the Inuka Digital Leap programme. Each trainee has been assigned to a host organisation that aligns with their area of specialisation.",
+    "category": "news",
+    "cover_image": "",
+    "is_published": true,
+    "published_at": "2026-07-06T15:57:06.302Z",
+    "created_at": "2026-07-06T15:57:06.303Z"
+  }
+},
+{
+  "model": "content.post",
+  "pk": "8f026c8a-d01d-4f69-a1ff-47b250d67269",
+  "fields": {
+    "author": 1,
+    "title": "Industry Mentors Share Insights on Kenya's Digital Infrastructure Future",
+    "slug": "industry-mentors-share-insights-on-kenyas-digital-infrastructure-future",
+    "content": "The Inuka Digital Leap programme hosted a mentorship forum featuring senior engineers and technology leaders from Kenya's leading telecommunications companies including Safaricom, Telkom Kenya, and several fibre network operators.",
+    "category": "blog",
+    "cover_image": "",
+    "is_published": true,
+    "published_at": "2026-07-06T15:57:06.301Z",
+    "created_at": "2026-07-06T15:57:06.301Z"
+  }
+},
+{
+  "model": "content.post",
+  "pk": "92955bcd-2c31-49f8-9832-1543984d2666",
+  "fields": {
+    "author": 1,
+    "title": "Women in Tech: Breaking Barriers in Network Infrastructure",
+    "slug": "women-in-tech-breaking-barriers-in-network-infrastructure",
+    "content": "With 42% female representation in its first cohort, the Inuka Digital Leap programme is demonstrating that gender inclusion is not just a goal but an achievable reality. The trainees are thriving in what has historically been a male-dominated technical field.",
+    "category": "blog",
+    "cover_image": "",
+    "is_published": true,
+    "published_at": "2026-07-06T15:57:06.297Z",
+    "created_at": "2026-07-06T15:57:06.298Z"
+  }
+},
+{
+  "model": "content.post",
+  "pk": "e0adf7d8-a851-487a-ae5d-3cac74b07116",
+  "fields": {
+    "author": 1,
+    "title": "Inuka Digital Leap First Cohort of 15 Trailblazers",
+    "slug": "inuka-digital-leap-first-cohort-of-15-trailblazers",
+    "content": "The Inuka Digital Leap Programme marked a defining milestone with the formation of its inaugural cohort of 15 trainees, who successfully applied, were selected, and formally enrolled into the intensive training pathway on June 15, 2026. The cohort represents the first intake under the programme structured digital workforce development framework. The launch and recognition event, hosted at the Jomo Kenyatta University of Agriculture and Technology (JKUAT) Main Campus, brought together stakeholders from industry, government, and the families of the trainees to acknowledge the significance of this pioneering group. Over a six-month period, Cohort 1 underwent rigorous, competency-based training covering network infrastructure, fibre optic engineering, broadband deployment, and cloud engineering.",
+    "category": "news",
+    "cover_image": "",
+    "is_published": true,
+    "published_at": "2026-07-06T15:38:59.625Z",
+    "created_at": "2026-07-06T15:38:59.628Z"
+  }
+},
+{
+  "model": "content.post",
+  "pk": "efcefd86-67b8-4402-aedc-5f519b619324",
+  "fields": {
+    "author": 1,
+    "title": "Trainees Complete First Round of Fibre Optic Splice Certification",
+    "slug": "trainees-complete-first-round-of-fibre-optic-splice-certification",
+    "content": "All 15 members of Cohort 1 have successfully passed their Fibre Optic Splice Certification examination. The practical examination, administered by certified industry assessors, tested the trainees proficiency in fusion splicing, mechanical splicing, and connector termination. The pass rate of 100% reflects both the dedication of the trainees and the effectiveness of the programme hands-on training approach.",
+    "category": "news",
+    "cover_image": "",
+    "is_published": true,
+    "published_at": "2026-07-06T15:57:06.294Z",
+    "created_at": "2026-07-06T15:57:06.295Z"
+  }
+},
+{
+  "model": "content.post",
+  "pk": "f0b17c7a-97f6-4728-bb29-32fe4c5946c9",
+  "fields": {
+    "author": 1,
+    "title": "Field Visit: Trainees Experience Real-World Fibre Deployment",
+    "slug": "field-visit-trainees-experience-real-world-fibre-deployment",
+    "content": "The trainees of Cohort 1 stepped out of the classroom and into the field for an immersive day of learning at active fibre deployment sites across Nairobi. The field visit gave trainees a firsthand look at real-world network deployment operations.",
+    "category": "news",
+    "cover_image": "",
+    "is_published": true,
+    "published_at": "2026-07-06T15:57:06.299Z",
+    "created_at": "2026-07-06T15:57:06.300Z"
+  }
+},
+{
+  "model": "content.sitesetting",
+  "pk": "0f861174-00ff-4b20-b500-003248b9b413",
+  "fields": {
+    "key": "footer_acknowledgement",
+    "value": "THIS PROJECT IS SUPPORTED BY KPC FOUNDATION",
+    "description": "Required footer acknowledgement text",
+    "updated_at": "2026-07-06T15:57:42.567Z"
+  }
+},
+{
+  "model": "content.sitesetting",
+  "pk": "2f6c5a43-34f7-48c0-98e5-efd0f2eafe55",
+  "fields": {
+    "key": "learning_areas",
+    "value": "[{\"title\": \"Network & Fixed Broadband Foundations\", \"description\": \"Core principles of network architecture, broadband technologies, and infrastructure fundamentals.\", \"icon\": \"pi pi-sitemap\"}, {\"title\": \"Optical Fibre Fundamentals\", \"description\": \"Physics of light propagation, fibre types, cable construction, and transmission principles.\", \"icon\": \"pi pi-sun\"}, {\"title\": \"Fibre Survey, Planning & Documentation\", \"description\": \"Route surveying, network design, GIS mapping, and as-built documentation.\", \"icon\": \"pi pi-pencil\"}, {\"title\": \"Installation, Splicing & Testing\", \"description\": \"Cable blowing, fusion splicing, connectorisation, OTDR testing, and power meter measurements.\", \"icon\": \"pi pi-wrench\"}, {\"title\": \"Maintenance & Service Restoration\", \"description\": \"Fault diagnosis, restoration techniques, preventive maintenance, and network resilience strategies.\", \"icon\": \"pi pi-refresh\"}, {\"title\": \"Digitization & Automation\", \"description\": \"Digital tools for network management, automated monitoring systems, and smart infrastructure.\", \"icon\": \"pi pi-cog\"}, {\"title\": \"Occupational Health & Safety\", \"description\": \"Worksite safety, hazard identification, PPE usage, and confined space procedures.\", \"icon\": \"pi pi-shield\"}, {\"title\": \"Customer Service & Professional Conduct\", \"description\": \"Client communication, professional ethics, teamwork, and workplace professionalism.\", \"icon\": \"pi pi-users\"}]",
+    "description": "Learning areas displayed on the pathway page",
+    "updated_at": "2026-07-06T15:57:42.562Z"
+  }
+},
+{
+  "model": "content.sitesetting",
+  "pk": "db71e8e4-5a5c-489a-9a39-e1cafbe59f97",
+  "fields": {
+    "key": "pathway_steps",
+    "value": "[{\"step\": 1, \"title\": \"Selection\", \"description\": \"Rigorous identification of high-potential youth from partner counties across Kenya.\", \"icon\": \"pi pi-search\", \"status\": \"completed\"}, {\"step\": 2, \"title\": \"Onboarding\", \"description\": \"Orientation, needs assessment, and personalised learning plans for each trainee.\", \"icon\": \"pi pi-user-plus\", \"status\": \"active\"}, {\"step\": 3, \"title\": \"Technical Training\", \"description\": \"Classroom and lab-based sessions covering fibre fundamentals, network architecture, and broadband systems.\", \"icon\": \"pi pi-wrench\", \"status\": \"upcoming\"}, {\"step\": 4, \"title\": \"Industry Attachment\", \"description\": \"Structured placement with industry partners where trainees apply their learning.\", \"icon\": \"pi pi-briefcase\", \"status\": \"upcoming\"}, {\"step\": 5, \"title\": \"Deployment\", \"description\": \"Graduates deployed across Kenya's digital infrastructure projects.\", \"icon\": \"pi pi-flag\", \"status\": \"upcoming\"}]",
+    "description": "Programme pathway steps",
+    "updated_at": "2026-07-06T15:57:42.565Z"
+  }
+},
+{
+  "model": "impact.metric",
+  "pk": "11111111-1111-1111-1111-111111111101",
+  "fields": {
+    "key": "total_trainees",
+    "label": "Total Trainees",
+    "value": "15",
+    "unit": "trainees",
+    "sort_order": 1,
+    "updated_at": "2026-07-06T00:00:00Z"
+  }
+},
+{
+  "model": "impact.metric",
+  "pk": "11111111-1111-1111-1111-111111111102",
+  "fields": {
+    "key": "training_duration",
+    "label": "Training Duration",
+    "value": "3",
+    "unit": "months",
+    "sort_order": 2,
+    "updated_at": "2026-07-06T00:00:00Z"
+  }
+},
+{
+  "model": "impact.metric",
+  "pk": "11111111-1111-1111-1111-111111111103",
+  "fields": {
+    "key": "attachment_duration",
+    "label": "Attachment Duration",
+    "value": "3",
+    "unit": "months",
+    "sort_order": 3,
+    "updated_at": "2026-07-06T00:00:00Z"
+  }
+},
+{
+  "model": "impact.metric",
+  "pk": "11111111-1111-1111-1111-111111111104",
+  "fields": {
+    "key": "certifications_supported",
+    "label": "Certifications Supported",
+    "value": "4",
+    "unit": "certifications",
+    "sort_order": 4,
+    "updated_at": "2026-07-06T00:00:00Z"
+  }
+},
+{
+  "model": "impact.metric",
+  "pk": "11111111-1111-1111-1111-111111111105",
+  "fields": {
+    "key": "masterclasses",
+    "label": "Masterclasses Delivered",
+    "value": "5",
+    "unit": "sessions",
+    "sort_order": 5,
+    "updated_at": "2026-07-06T00:00:00Z"
+  }
+},
+{
+  "model": "impact.metric",
+  "pk": "11111111-1111-1111-1111-111111111106",
+  "fields": {
+    "key": "employment_tracking",
+    "label": "Employment Tracking Period",
+    "value": "12",
+    "unit": "months",
+    "sort_order": 6,
+    "updated_at": "2026-07-06T00:00:00Z"
+  }
+},
+{
+  "model": "partners.partner",
+  "pk": "22222222-2222-2222-2222-222222222201",
+  "fields": {
+    "name": "Kenya Pipeline Company Foundation",
+    "role": "Corporate Foundation",
+    "description": "The Kenya Pipeline Company Foundation champions corporate social responsibility by funding digital skills development programmes that create sustainable economic opportunities for Kenyan youth.",
+    "focus_areas": "Programme Funding, Industry Equipment, Youth Empowerment, Infrastructure Support",
+    "logo": "partners/Logo_of_KPC_uwwemu",
+    "website_url": "https://www.kpcfoundation.or.ke/",
+    "is_required_acknowledgement": true,
+    "sort_order": 1
+  }
+},
+{
+  "model": "partners.partner",
+  "pk": "22222222-2222-2222-2222-222222222202",
+  "fields": {
+    "name": "JKUAT",
+    "role": "Academic Partner",
+    "description": "Jomo Kenyatta University of Agriculture and Technology",
+    "focus_areas": "",
+    "logo": "",
+    "website_url": "https://www.jkuat.ac.ke",
+    "is_required_acknowledgement": false,
+    "sort_order": 2
+  }
+},
+{
+  "model": "partners.partner",
+  "pk": "22222222-2222-2222-2222-222222222203",
+  "fields": {
+    "name": "JHUB Africa",
+    "role": "Implementation Partner",
+    "description": "Innovation hub driving digital transformation across Africa",
+    "focus_areas": "",
+    "logo": "",
+    "website_url": "https://www.jhubafrica.com",
+    "is_required_acknowledgement": false,
+    "sort_order": 3
+  }
+}
+]
