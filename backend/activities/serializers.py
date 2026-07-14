@@ -13,5 +13,5 @@ class ActivityListSerializer(serializers.ModelSerializer):
         model = Activity
         fields = [
             'id', 'title', 'activity_type',
-            'activity_date', 'tag', 'photo'
+            'activity_date', 'tag', 'photo', 'description'
         ]
