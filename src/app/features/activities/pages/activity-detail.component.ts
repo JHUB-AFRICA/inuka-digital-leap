@@ -17,8 +17,12 @@ import { Activity } from '../../../core/models/activity.model';
             <span class="pi pi-arrow-left" aria-hidden="true"></span>
             Back to activities
           </a>
-          <div class="detail-hero__visual">
-            <span class="detail-hero__icon pi pi-bolt" aria-hidden="true"></span>
+          <div class="detail-hero__visual" [class.detail-hero__visual--photo]="act.photo">
+            @if (act.photo) {
+              <img [src]="act.photo" [alt]="act.title" class="detail-hero__photo" />
+            } @else {
+              <span class="detail-hero__icon pi pi-bolt" aria-hidden="true"></span>
+            }
           </div>
           <span class="detail-hero__category">{{ act.activity_type }}</span>
           <span class="detail-hero__meta">{{ act.activity_date | date:'mediumDate' }}</span>
@@ -80,8 +84,10 @@ import { Activity } from '../../../core/models/activity.model';
     .detail-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(237,27,36,0.12) 0%, transparent 60%); pointer-events: none; }
     .detail-hero__back { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-body); font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 24px; transition: color var(--transition-fast); position: relative; z-index: 1; }
     .detail-hero__back:hover { color: #fff; }
-    .detail-hero__visual { width: 80px; height: 80px; border-radius: var(--rounded-2xl); background: rgba(237,27,36,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; position: relative; z-index: 1; }
+    .detail-hero__visual { width: 80px; height: 80px; border-radius: var(--rounded-2xl); background: rgba(237,27,36,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; position: relative; z-index: 1; overflow: hidden; }
+    .detail-hero__visual--photo { width: 100%; max-width: 720px; height: 320px; background: transparent; }
     .detail-hero__icon { font-size: 2.25rem; color: var(--color-electric-blue); }
+    .detail-hero__photo { width: 100%; height: 100%; object-fit: cover; border-radius: var(--rounded-2xl); }
     .detail-hero__category { display: inline-block; font: var(--label-caps); color: var(--color-electric-blue); background: rgba(237,27,36,0.12); padding: 4px 16px; border-radius: var(--rounded-full); margin-bottom: 10px; position: relative; z-index: 1; }
     .detail-hero__meta { display: block; font-family: var(--font-body); font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 16px; position: relative; z-index: 1; }
     .detail-hero__title { font-family: var(--font-heading); font-size: clamp(1.5rem, 4vw, 2.75rem); font-weight: 800; color: #fff; margin: 0 auto; max-width: 800px; line-height: 1.15; position: relative; z-index: 1; }
@@ -104,8 +110,13 @@ import { Activity } from '../../../core/models/activity.model';
     @media (max-width: 1024px) { .detail-related__grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 768px) {
       .detail-hero { padding: 100px 0 60px; }
+      .detail-hero__visual--photo { height: 200px; max-width: 100%; }
       .detail-content__paragraph { font-size: 1rem; }
       .detail-related__grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .detail-hero__visual--photo { height: 160px; }
     }
   `],
   changeDetection: ChangeDetectionStrategy.OnPush,
