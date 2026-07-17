@@ -1,0 +1,41 @@
+[
+  {
+    "model": "partners.partner",
+    "pk": "22222222-2222-2222-2222-222222222201",
+    "fields": {
+      "name": "KPC Foundation",
+      "role": "Primary Funder",
+      "description": "This project is supported by KPC Foundation",
+      "logo": "",
+      "website_url": "",
+      "is_required_acknowledgement": true,
+      "sort_order": 1
+    }
+  },
+  {
+    "model": "partners.partner",
+    "pk": "22222222-2222-2222-2222-222222222202",
+    "fields": {
+      "name": "JKUAT",
+      "role": "Academic Partner",
+      "description": "Jomo Kenyatta University of Agriculture and Technology",
+      "logo": "",
+      "website_url": "https://www.jkuat.ac.ke",
+      "is_required_acknowledgement": false,
+      "sort_order": 2
+    }
+  },
+  {
+    "model": "partners.partner",
+    "pk": "22222222-2222-2222-2222-222222222203",
+    "fields": {
+      "name": "JHUB Africa",
+      "role": "Implementation Partner",
+      "description": "Innovation hub driving digital transformation across Africa",
+      "logo": "",
+      "website_url": "https://www.jhubafrica.com",
+      "is_required_acknowledgement": false,
+      "sort_order": 3
+    }
+  }
+]

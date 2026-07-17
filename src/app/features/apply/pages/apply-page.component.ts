@@ -1,12 +1,16 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { DatePipe } from '@angular/common';
 import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.directive';
-import { PARTNERS } from '../../../core/constants';
+import { PartnerService } from '../../../core/services/partner.service';
+import { Partner } from '../../../core/models/partner.model';
+import { CohortService } from '../../../core/services/cohort.service';
+import { Cohort } from '../../../core/models/cohort.model';
 
 @Component({
   selector: 'app-apply-page',
   standalone: true,
-  imports: [RouterLink, ScrollRevealDirective],
+  imports: [RouterLink, ScrollRevealDirective, DatePipe],
   template: `
     <!-- Hero -->
     <section class="page-hero">
@@ -94,10 +98,10 @@ import { PARTNERS } from '../../../core/constants';
           <h2 class="partners__title">Backed by Kenya's Leading Institutions</h2>
         </div>
         <div class="partners__grid" appScrollReveal="fade-up">
-          @for (partner of partners; track partner.name) {
+          @for (partner of partners(); track partner.id) {
             <div class="partners__card">
-              <img [src]="partner.logo" [alt]="partner.alt" class="partners__logo" loading="lazy" />
-              <span class="partners__name">{{ partner.fullName }}</span>
+              @if (partner.logo) { <img [src]="partner.logo" [alt]="partner.name" class="partners__logo" loading="lazy" /> }
+              <span class="partners__name">{{ partner.name }}</span>
             </div>
           }
         </div>
@@ -452,6 +456,29 @@ import { PARTNERS } from '../../../core/constants';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ApplyPageComponent {
-  protected readonly partners = PARTNERS;
+export class ApplyPageComponent implements OnInit {
+  private readonly partnerService = inject(PartnerService);
+  private readonly cohortService = inject(CohortService);
+
+  protected readonly partners = signal<Partner[]>([]);
+  protected readonly nextCohort = signal<Cohort | null>(null);
+  protected readonly isOpen = signal(false);
+
+  ngOnInit(): void {
+    this.partnerService.getPartners().subscribe({
+      next: (data) => this.partners.set(data),
+      error: () => {}
+    });
+
+    this.cohortService.getCohorts().subscribe({
+      next: (cohorts) => {
+        const active = cohorts.find(c => c.status === 'active');
+        const upcoming = cohorts.find(c => c.status === 'upcoming');
+        const next = active || upcoming || null;
+        this.nextCohort.set(next);
+        this.isOpen.set(!!active);
+      },
+      error: () => {}
+    });
+  }
 }
