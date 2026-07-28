@@ -13,6 +13,7 @@ export interface Cohort {
 export interface Fellow {
   id: string;
   cohort: string;
+  cohort_name?: string;
   full_name: string;
   county: string;
   education_background: string;
