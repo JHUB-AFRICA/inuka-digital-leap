@@ -33,6 +33,10 @@ export class CohortService {
     return this.api.get<Fellow[]>('fellows', params);
   }
 
+  searchFellows(query: string): Observable<Fellow[]> {
+    return this.api.get<Fellow[]>('fellows', { search: query });
+  }
+
   getFeaturedFellows(): Observable<Fellow[]> {
     return this.api.get<Fellow[]>('fellows', { featured: 'true' });
   }

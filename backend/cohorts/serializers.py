@@ -10,6 +10,7 @@ class CertificationSerializer(serializers.ModelSerializer):
 
 class FellowSerializer(serializers.ModelSerializer):
     certifications = CertificationSerializer(many=True, read_only=True)
+    cohort_name = serializers.CharField(source='cohort.name', read_only=True)
 
     class Meta:
         model = Fellow
@@ -17,12 +18,14 @@ class FellowSerializer(serializers.ModelSerializer):
 
 
 class FellowListSerializer(serializers.ModelSerializer):
+    certifications = CertificationSerializer(many=True, read_only=True)
+
     class Meta:
         model = Fellow
         fields = [
             'id', 'full_name', 'county', 'specialization',
             'technical_interest', 'placement_status',
-            'photo', 'is_featured', 'quote'
+            'photo', 'is_featured', 'quote', 'certifications'
         ]
 
 
