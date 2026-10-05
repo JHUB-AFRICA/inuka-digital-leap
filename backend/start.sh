@@ -10,8 +10,5 @@ python manage.py migrate --noinput
 echo "Ensuring superuser exists..."
 python manage.py createsuperuser --noinput || true
 
-echo "Loading seed data..."
-python manage.py loaddata seed_data.json || true
-
-echo "Starting Gunicorn on port ${PORT:-8000}..."
-exec gunicorn config.wsgi --bind 0.0.0.0:${PORT:-8000}
+echo "Starting Gunicorn..."
+exec gunicorn config.wsgi:application --bind 0.0.0.0:${PORT:-8000}
