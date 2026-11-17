@@ -57,7 +57,7 @@ import { Fellow } from '../../../core/models/cohort.model';
               <a [routerLink]="['/cohort', fellow.id]" class="cohort-grid__card" appScrollReveal="fade-up" [delay]="(i % 4) * 80">
                 <div class="cohort-grid__card-portrait">
                   @if (fellow.photo) {
-                    <img [src]="fellow.photo" [alt]="fellow.full_name" class="cohort-grid__card-photo" />
+                    <img loading="lazy" decoding="async" [src]="fellow.photo" [alt]="fellow.full_name" class="cohort-grid__card-photo" />
                   } @else {
                     <span class="cohort-grid__card-avatar">
                       {{ fellow.full_name.charAt(0) }}{{ fellow.full_name.split(' ')[1]?.charAt(0) }}
@@ -89,7 +89,9 @@ import { Fellow } from '../../../core/models/cohort.model';
             }
           </div>
 
-          @if (!loading() && filteredFellows().length === 0) {
+          @if (!loading() && loadError()) {
+            <div class="cohort-grid__empty" role="status">Trainee profiles are temporarily unavailable. Please try again in a moment.</div>
+          } @else if (!loading() && filteredFellows().length === 0) {
             <div class="cohort-grid__empty">
               <p>No trainees found matching "{{ searchTerm() }}".</p>
             </div>
@@ -106,7 +108,7 @@ import { Fellow } from '../../../core/models/cohort.model';
         display: flex;
         align-items: center;
         overflow: hidden;
-        background: url('/assets/fibre-ops.png') center / cover no-repeat;
+        background: url('/assets/fibre-ops.webp') center / cover no-repeat;
         padding-top: var(--navbar-height);
       }
       .cohort-hero__bg { position: absolute; inset: 0; z-index: 0; }
@@ -206,6 +208,7 @@ export class CohortPageComponent implements OnInit {
 
   protected readonly fellows = signal<Fellow[]>([]);
   protected readonly loading = signal(true);
+  protected readonly loadError = signal(false);
   protected readonly searchTerm = signal('');
 
   protected readonly filteredFellows = computed(() => {
@@ -235,7 +238,7 @@ export class CohortPageComponent implements OnInit {
             this.fellows.set(data);
             this.loading.set(false);
           },
-          error: () => this.loading.set(false)
+          error: () => { this.loadError.set(true); this.loading.set(false); }
         });
       },
       error: () => this.loading.set(false)

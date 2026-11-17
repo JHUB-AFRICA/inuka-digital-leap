@@ -117,7 +117,7 @@ import { Cohort } from '../../../core/models/cohort.model';
   styles: [
     `
       .page-hero {
-        background: url('/assets/fibre-cable.png') center / cover no-repeat;
+        background: url('/assets/fibre-cable.webp') center / cover no-repeat;
         padding: 120px 0 100px;
         text-align: center;
         position: relative;

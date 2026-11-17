@@ -9,7 +9,7 @@ import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reve
   template: `
     <section class="cta section-padding" id="cta">
       <div class="cta__bg" aria-hidden="true">
-        <div class="cta__bg-image" [style.background-image]="'url(assets/discussion.jpg)'"></div>
+        <div class="cta__bg-image" [style.background-image]="'url(assets/discussion.webp)'"></div>
         <div class="cta__bg-overlay"></div>
         <div class="cta__fibre">
           <svg class="cta__fibre-svg" viewBox="0 0 1440 400" preserveAspectRatio="none">

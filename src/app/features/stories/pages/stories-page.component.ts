@@ -44,7 +44,7 @@ import { Post } from '../../../core/models/content.model';
           <article class="featured__card" appScrollReveal="fade-up">
             <div class="featured__card-image">
               @if (post.cover_image) {
-                <img [src]="post.cover_image" [alt]="post.title" class="featured__card-img" />
+                <img loading="lazy" decoding="async" [src]="post.cover_image" [alt]="post.title" class="featured__card-img" />
               }
             </div>
             <div class="featured__card-body">
@@ -66,6 +66,9 @@ import { Post } from '../../../core/models/content.model';
     <section class="stories-page">
       <div class="container">
         <div class="stories-page__grid">
+          @if (!loading() && loadError()) {
+            <p class="stories-page__empty" role="status">Stories are temporarily unavailable. Please try again in a moment.</p>
+          }
           @for (post of filteredPosts(); track post.id; let i = $index) {
             <article class="stories-page__card" appScrollReveal="fade-up" [delay]="(i % 3) * 100">
               <div class="stories-page__card-image">
@@ -102,7 +105,7 @@ import { Post } from '../../../core/models/content.model';
   `,
   styles: [`
     .page-hero {
-      background: url('/assets/stories.png') center / cover no-repeat;
+      background: url('/assets/stories.webp') center / cover no-repeat;
       padding: 120px 0 100px; text-align: center; position: relative; overflow: hidden;
       &::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(237,27,36,0.12) 0%, transparent 60%); pointer-events: none; }
     }
@@ -162,6 +165,7 @@ export class StoriesPageComponent implements OnInit {
 
   private readonly allPosts = signal<Post[]>([]);
   protected readonly loading = signal(true);
+  protected readonly loadError = signal(false);
   protected readonly activeCategory = signal<string>('All');
 
   protected readonly categories = computed(() => [
@@ -190,7 +194,7 @@ export class StoriesPageComponent implements OnInit {
         this.allPosts.set(data);
         this.loading.set(false);
       },
-      error: () => this.loading.set(false)
+      error: () => { this.loadError.set(true); this.loading.set(false); }
     });
   }
 }

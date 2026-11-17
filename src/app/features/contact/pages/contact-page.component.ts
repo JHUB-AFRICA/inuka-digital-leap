@@ -219,7 +219,7 @@ import { PARTNERS, SITE_CONFIG } from '../../../core/constants';
   styles: [
     `
       .page-hero {
-        background: url('/assets/networking.jpg') center / cover no-repeat;
+        background: url('/assets/networking.webp') center / cover no-repeat;
         padding: 120px 0 100px;
         text-align: center;
         position: relative;

@@ -73,12 +73,6 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
     this.isHomePage.set(this.router.url === '/' || this.router.url === '');
   }
 
-  protected navigateTo(event: Event, path: string): void {
-    event.preventDefault();
-    this.closeMobileMenu();
-    this.router.navigateByUrl(path);
-  }
-
   protected scrollToSection(event: Event, fragment: string): void {
     event.preventDefault();
     this.closeMobileMenu();

@@ -1,0 +1,14 @@
+# Keep local secrets and developer-only files out of the backend image.
+.env
+.env.*
+!.env.example
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.sqlite3
+staticfiles/
+media/
+.git/
+.vscode/
+.idea/

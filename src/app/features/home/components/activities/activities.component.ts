@@ -22,7 +22,7 @@ import { Activity } from '../../../../core/models/activity.model';
             <a [routerLink]="['/activities', activity.id]" class="activities__card" appScrollReveal="fade-up" [delay]="(i % 3) * 80">
               <div class="activities__card-visual">
                 @if (activity.photo) {
-                  <img [src]="activity.photo" [alt]="activity.title" style="width:100%;height:100%;object-fit:cover;" />
+                  <img loading="lazy" decoding="async" [src]="activity.photo" [alt]="activity.title" style="width:100%;height:100%;object-fit:cover;" />
                 } @else {
                   <span class="activities__card-icon pi pi-bolt" aria-hidden="true"></span>
                 }
