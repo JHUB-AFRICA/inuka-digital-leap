@@ -27,7 +27,7 @@ import { Post } from '../../../core/models/content.model';
         <section class="detail-image">
           <div class="container">
             <div class="detail-image__wrapper">
-              <img [src]="s.cover_image" [alt]="s.title" class="detail-image__img" />
+              <img loading="lazy" decoding="async" [src]="s.cover_image" [alt]="s.title" class="detail-image__img" />
             </div>
           </div>
         </section>
@@ -128,26 +128,37 @@ export class StoryDetailComponent implements OnInit {
   protected readonly relatedStories = signal<Post[]>([]);
 
   ngOnInit(): void {
-    const slug = this.route.snapshot.paramMap.get('slug');
-    if (!slug) {
-      this.loading.set(false);
-      return;
-    }
+    this.route.paramMap.subscribe(params => {
+      const slug = params.get('slug');
+      this.loading.set(true);
+      this.story.set(null);
+      this.paragraphs.set([]);
+      this.relatedStories.set([]);
 
-    this.contentService.getPublishedPosts().subscribe({
-      next: (posts) => {
-        const found = posts.find(p => p.slug === slug) ?? null;
-        this.story.set(found);
-        this.paragraphs.set(found ? found.content.split('\n\n') : []);
-
-        if (found) {
-          this.relatedStories.set(
-            posts.filter(p => p.slug !== found.slug && p.category === found.category).slice(0, 3)
-          );
-        }
+      if (!slug) {
         this.loading.set(false);
-      },
-      error: () => this.loading.set(false)
+        return;
+      }
+
+      this.contentService.getPublishedPosts().subscribe({
+        next: (posts) => {
+          const found = posts.find(p => p.slug === slug) ?? null;
+          this.story.set(found);
+          this.paragraphs.set(found ? found.content.split('\n\n') : []);
+
+          if (found) {
+            const sameCategory = posts.filter(
+              p => p.slug !== found.slug && p.category === found.category
+            );
+            const otherStories = posts.filter(
+              p => p.slug !== found.slug && p.category !== found.category
+            );
+            this.relatedStories.set([...sameCategory, ...otherStories].slice(0, 3));
+          }
+          this.loading.set(false);
+        },
+        error: () => this.loading.set(false)
+      });
     });
   }
 }

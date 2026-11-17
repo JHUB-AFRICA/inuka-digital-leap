@@ -21,7 +21,7 @@ import { Fellow } from '../../../../core/models/cohort.model';
             <div class="trainees__card">
               <div class="trainees__portrait">
                 @if (fellow.photo) {
-                  <img [src]="fellow.photo" [alt]="fellow.full_name" class="trainees__photo" />
+                  <img loading="lazy" decoding="async" [src]="fellow.photo" [alt]="fellow.full_name" class="trainees__photo" />
                 } @else {
                   <span class="trainees__avatar">
                     {{ fellow.full_name.charAt(0) }}{{ fellow.full_name.split(' ')[1]?.charAt(0) }}

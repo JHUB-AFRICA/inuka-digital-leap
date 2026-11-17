@@ -19,7 +19,7 @@ import { Activity } from '../../../core/models/activity.model';
           </a>
           <div class="detail-hero__visual" [class.detail-hero__visual--photo]="act.photo">
             @if (act.photo) {
-              <img [src]="act.photo" [alt]="act.title" class="detail-hero__photo" />
+              <img loading="lazy" decoding="async" [src]="act.photo" [alt]="act.title" class="detail-hero__photo" />
             } @else {
               <span class="detail-hero__icon pi pi-bolt" aria-hidden="true"></span>
             }

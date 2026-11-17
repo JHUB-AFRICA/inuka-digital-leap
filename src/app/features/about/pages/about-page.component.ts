@@ -25,7 +25,7 @@ interface Milestone {
         <div class="about-hero__bg" aria-hidden="true">
           <div
             class="about-hero__image"
-            [style.background-image]="'url(assets/about-idl.png)'"
+            [style.background-image]="'url(assets/about-idl.webp)'"
           ></div>
           <div class="about-hero__overlay"></div>
           <div class="about-hero__glow about-hero__glow--1"></div>
@@ -49,7 +49,7 @@ interface Milestone {
             <div class="about-story__visual" appScrollReveal="fade-right" [delay]="0">
               <div class="about-story__image-block">
                 <img
-                  src="assets/about-idl.png"
+                  src="assets/about-idl.webp"
                   alt="Inuka Digital Leap training lab session"
                   class="about-story__image"
                   loading="lazy"

@@ -19,7 +19,7 @@ import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reve
           <div class="about__visual" appScrollReveal="fade-right" [delay]="0">
             <div class="about__image-block">
               <img
-                src="assets/about-idl.png"
+                src="assets/about-idl.webp"
                 alt="Inuka Digital Leap training lab session"
                 class="about__image"
                 loading="lazy"

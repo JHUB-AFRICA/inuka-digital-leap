@@ -28,7 +28,7 @@ import { Fellow } from '../../../../core/models/cohort.model';
           <div class="profile-hero__main">
             <div class="profile-hero__portrait">
               @if (f.photo) {
-                <img [src]="f.photo" [alt]="f.full_name" class="profile-hero__photo" />
+                <img loading="lazy" decoding="async" [src]="f.photo" [alt]="f.full_name" class="profile-hero__photo" />
               } @else {
                 <span class="profile-hero__avatar">
                   {{ f.full_name.charAt(0) }}{{ f.full_name.split(' ')[1]?.charAt(0) }}
@@ -99,7 +99,7 @@ import { Fellow } from '../../../../core/models/cohort.model';
                   @for (cert of f.certifications; track cert.id) {
                     <div class="cert-card">
                       @if (cert.badge) {
-                        <img [src]="cert.badge" [alt]="cert.name" class="cert-card__badge" />
+                        <img loading="lazy" decoding="async" [src]="cert.badge" [alt]="cert.name" class="cert-card__badge" />
                       } @else {
                         <span class="cert-card__icon pi pi-verified" aria-hidden="true"></span>
                       }

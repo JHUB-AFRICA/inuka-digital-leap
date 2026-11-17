@@ -9,7 +9,7 @@
       <div class="navbar__logos">
         <a routerLink="/" class="navbar__logo-link" aria-label="Inuka Digital Leap Home">
           <span class="navbar__logo-frame">
-            <img
+            <img loading="lazy" decoding="async"
               src="assets/logos/idl-logo-nobg.png"
               alt="Inuka Digital Leap"
               class="navbar__brand-logo navbar__brand-logo--idl"
@@ -19,7 +19,7 @@
         <span class="navbar__logo-divider" aria-hidden="true"></span>
         <a routerLink="/" class="navbar__logo-link" aria-label="JKUAT">
           <span class="navbar__logo-frame">
-            <img
+            <img loading="lazy" decoding="async"
               src="assets/logos/jkuat.png"
               alt="JKUAT"
               class="navbar__brand-logo navbar__brand-logo--jkuat"
@@ -29,7 +29,7 @@
         <span class="navbar__logo-divider" aria-hidden="true"></span>
         <a routerLink="/" class="navbar__logo-link" aria-label="JHUB Africa">
           <span class="navbar__logo-frame">
-            <img
+            <img loading="lazy" decoding="async"
               src="assets/logos/jhub-logo-nobg.png"
               alt="JHUB Africa"
               class="navbar__brand-logo navbar__brand-logo--jhub"
@@ -47,8 +47,8 @@
               <a
                 class="navbar__link"
                 [class.navbar__link--active]="isActiveRoute($any(link).path)"
-                [href]="$any(link).path"
-                (click)="navigateTo($event, $any(link).path)"
+                [routerLink]="$any(link).path"
+                (click)="closeMobileMenu()"
               >
                 @if (isActiveRoute($any(link).path)) {
                   <span class="navbar__link-indicator" aria-hidden="true"></span>
@@ -100,8 +100,8 @@
                 <a
                   class="navbar__mobile-link"
                   [class.navbar__mobile-link--active]="isActiveRoute($any(link).path)"
-                  [href]="$any(link).path"
-                  (click)="navigateTo($event, $any(link).path)"
+                  [routerLink]="$any(link).path"
+                  (click)="closeMobileMenu()"
                 >
                   {{ link.label }}
                 </a>

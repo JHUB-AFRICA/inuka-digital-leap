@@ -28,6 +28,9 @@ import { Partner } from '../../../core/models/partner.model';
             <p>Loading partners...</p>
           </div>
         }
+        @if (!loading() && loadError()) {
+          <div class="partners-page__loading" role="status">Partner information is temporarily unavailable. Please try again in a moment.</div>
+        }
         <div class="partners-page__list">
           @for (partner of partners(); track partner.id; let i = $index) {
             <div class="partners-page__card" appScrollReveal="fade-up" [delay]="i * 120">
@@ -84,7 +87,7 @@ import { Partner } from '../../../core/models/partner.model';
   `,
   styles: [`
     .page-hero {
-      background: url('/assets/network-broadband.jpg') center / cover no-repeat;
+      background: url('/assets/network-broadband.webp') center / cover no-repeat;
       padding: 120px 0 100px; text-align: center; position: relative; overflow: hidden;
     }
     .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(237,27,36,0.12) 0%, transparent 60%); pointer-events: none; }
@@ -128,11 +131,12 @@ export class PartnersPageComponent implements OnInit {
   private readonly partnerService = inject(PartnerService);
   protected readonly partners = signal<Partner[]>([]);
   protected readonly loading = signal(true);
+  protected readonly loadError = signal(false);
 
   ngOnInit(): void {
     this.partnerService.getPartners().subscribe({
-      next: (data) => { this.partners.set(data); this.loading.set(false); },
-      error: () => this.loading.set(false)
+        next: (data) => { this.partners.set(data); this.loading.set(false); },
+        error: () => { this.loadError.set(true); this.loading.set(false); }
     });
   }
 }

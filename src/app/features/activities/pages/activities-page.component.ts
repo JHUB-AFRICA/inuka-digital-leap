@@ -41,12 +41,17 @@ import { Activity } from '../../../core/models/activity.model';
 
     <section class="activities-page">
       <div class="container">
+        @if (!loading() && loadError()) {
+          <div class="state-box error" role="status">Activities are temporarily unavailable. Please try again in a moment.</div>
+        } @else if (!loading() && filteredActivities().length === 0) {
+          <div class="state-box" role="status">No activities have been published yet.</div>
+        }
         <div class="activities-page__grid">
           @for (activity of filteredActivities(); track activity.id; let i = $index) {
             <a [routerLink]="['/activities', activity.id]" class="activities-page__card" appScrollReveal="fade-up" [delay]="(i % 3) * 80">
               <div class="activities-page__card-visual">
                 @if (activity.photo) {
-                  <img [src]="activity.photo" [alt]="activity.title" style="width:100%;height:100%;object-fit:cover;" />
+                  <img loading="lazy" decoding="async" [src]="activity.photo" [alt]="activity.title" style="width:100%;height:100%;object-fit:cover;" />
                 } @else {
                   <span class="activities-page__card-icon pi pi-bolt" aria-hidden="true"></span>
                 }
@@ -64,19 +69,15 @@ import { Activity } from '../../../core/models/activity.model';
               </div>
             </a>
           }
+          @if (!loading() && filteredActivities().length === 0 && !loadError()) {
+            <p class="activities-page__empty" role="status">No activities have been published yet.</p>
+          }
         </div>
-
-        @if (!loading() && filteredActivities().length === 0) {
-          <div class="activities-page__empty">
-            <span class="pi pi-info-circle" style="font-size: 2rem; opacity: 0.3;"></span>
-            <p>No activities found in this category.</p>
-          </div>
-        }
       </div>
     </section>
   `,
   styles: [`
-    .page-hero { background: url('/assets/optical.jpg') center / cover no-repeat; padding: 120px 0 100px; text-align: center; position: relative; overflow: hidden; }
+    .page-hero { background: url('/assets/optical.webp') center / cover no-repeat; padding: 120px 0 100px; text-align: center; position: relative; overflow: hidden; }
     .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(237,27,36,0.12) 0%, transparent 60%); pointer-events: none; }
     .page-hero__label { display: inline-block; font: var(--label-caps); color: var(--color-electric-blue); background: rgba(237,27,36,0.12); padding: 4px 16px; border-radius: var(--rounded-full); margin-bottom: 16px; }
     .page-hero__title { font-family: var(--font-heading); font-size: clamp(2rem,5vw,3.25rem); font-weight: 800; color: #fff; margin: 0 0 16px; line-height: 1.15; }
@@ -111,6 +112,7 @@ export class ActivitiesPageComponent implements OnInit {
 
   private readonly allActivities = signal<Activity[]>([]);
   protected readonly loading = signal(true);
+  protected readonly loadError = signal(false);
   protected readonly activeCategory = signal<string>('All');
 
   protected readonly categories = computed(() => [
@@ -134,7 +136,7 @@ export class ActivitiesPageComponent implements OnInit {
         this.allActivities.set(data);
         this.loading.set(false);
       },
-      error: () => this.loading.set(false)
+      error: () => { this.loadError.set(true); this.loading.set(false); }
     });
   }
 }
